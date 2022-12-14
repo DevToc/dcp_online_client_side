@@ -15,10 +15,10 @@ const sizes  = {
 
 }
 
-const Button = ({ type, text,size }) => {
+const Button = ({ type, text,size, back }) => {
   return (
     <button
-      className={`${type} text-white bg-[${colors[type]}] ${sizes[size?size:"big"]} text-center `}
+      className={`${type} text-white bg-[${colors[type]}] ${back} ${sizes[size?size:"big"]} text-center `}
     >
       {text}
     </button>
