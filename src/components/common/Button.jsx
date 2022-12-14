@@ -15,9 +15,10 @@ const sizes  = {
 
 }
 
-const Button = ({ type, text,size, back }) => {
+const Button = ({ type, text,size, back, handleClick }) => {
   return (
     <button
+      onClick = {handleClick}
       className={`${type} text-white bg-[${colors[type]}] ${back} ${sizes[size?size:"big"]} text-center `}
     >
       {text}
