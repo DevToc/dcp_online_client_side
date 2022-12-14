@@ -8,7 +8,10 @@ const Login = () => {
   const [isHide, setHide] = useState(true);
 
   return (
-    <div className=" min-w-full min-h-screen bg-back text-white xl:px-40 py-2 items-center">
+    <div className=" min-w-full min-h-screen bg-back text-white xl:px-40 py-2 items-center relative">
+      <div className="filter absolute top-[-41px] left-[38px] w-[454px] h-[454px] bg-[#38ae0099] blur-[302px]">
+
+      </div>
       <div className="flex flex-row justify-between">
         <div className="basis-1/2 text-left pt-48 max-w-[678px]">
           <div className="title flex items-center">
@@ -73,7 +76,7 @@ const Login = () => {
                 </button>
             </div>
             <div className="register-now mt-[77px]">
-                <p className="text-[#ffffff80] text-[23px] leading-[34px]">Still not registered?<a className="font-bold ml-3 text-[#ffffff] text-[23px] leading-[34px] ">Register Now</a></p>
+                <p className="text-[#ffffff80] text-[23px] leading-[34px]">Still not registered?<a href="register" className="font-bold ml-3 text-[#ffffff] text-[23px] leading-[34px] ">Register Now</a></p>
             </div>
           </div>
         </div>
