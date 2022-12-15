@@ -1,9 +1,10 @@
 import React from 'react';
  
-const Transfer = ({isActive}) => {
+const Transfer = ({isActive,handleClick}) => {
   return (
     <a
     href="transfer"
+    onClick={handleClick('transfer')}
     className={`flex items-center p-2 space-x-3 ${isActive?'border-r-4 border-[#38ae00]':''}`}
   >
     {isActive?(<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">

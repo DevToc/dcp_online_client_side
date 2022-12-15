@@ -1,12 +1,13 @@
 import React from 'react';
 import { useParams } from 'react-router';
  
-const HomeMenu = ({isActive}) => {
+const HomeMenu = ({isActive,handleClick}) => {
   const {url} = useParams();
   console.log(url)
   return (
     <a
     href="home"
+    onClick={handleClick('home')}
     className={`flex items-center p-2 space-x-3 ${isActive?'border-r-4 border-[#38ae00]':''}`}
   >
    {isActive?( <svg

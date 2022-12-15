@@ -79,10 +79,7 @@ const Home = () => {
               />
               <div className="absolute right-4 top-4">
                 <BiCopy color="white" size={"20px"}></BiCopy>
-                {/* <div class=" opacity-0 bg-black text-white text-center text-xs rounded-lg py-2 absolute z-10 group-hover:opacity-100 bottom-full  pointer-events-none">
-        copy
-        <svg className="absolute text-black h-2 w-full left-0 top-full" x="0px" y="0px" viewBox="0 0 255 255"><polygon class="fill-current" points="0,0 127.5,127.5 255,0"/></svg>
-      </div> */}
+              
               </div>
             </div>
             <div className="description mt-[10px] flex items-center justify-start text-left">
