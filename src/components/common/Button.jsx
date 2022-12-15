@@ -5,13 +5,15 @@ import "./Button.scss";
 const colors = {
   red: "#ff0707",
   green: "#38ae00",
+  orange:'#FF6107'
 
 };
 
 const sizes  = {
   "big":"w-[217px] py-[14px] text-[23px] leading-[34px] font-semibold rounded-[31.5px] ",
   "small":"w-[145px] py-[5px] text-[17px] leading-[26px] font-semibold rounded-[31.5px] ",
-  "large":"w-[367px] py-[14px] text-[23px] leading-[34px] font-semibold rounded-[31.5px] "
+  "large":"w-[367px] py-[14px] text-[23px] leading-[34px] font-semibold rounded-[31.5px] ",
+  "medium":"w-[146px] py-[7px] text-[17px] leading-[26px] font-semibold rounded-[31.5px] "
 
 }
 
