@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Label from "../../components/common/Label";
-import Input from '../../components/common/Input'
+import Input from "../../components/common/Input";
 
 import { IoEllipse } from "react-icons/io5";
 import Button from "../../components/common/Button";
+import Modal from "../../components/common/Modal";
 
 const Withdraw = () => {
+  const [modalShow, setModalShow] = useState(false);
+  const handleClick = () => {
+    setModalShow(true);
+  };
   return (
     <div className="movements px-[60px] py-[54px]">
       <div className="flex  flex-col items-start">
@@ -28,26 +33,33 @@ const Withdraw = () => {
         ></textarea>
       </div>
       <div className="password flex justify-between mt-[29px] max-w-[1125px] space-x-12">
-            <div className="collection-password flex flex-col items-start basis-1/2">
-                <Label >Collection Password</Label>
-                <Input title={'wallet name'}></Input>
+        <div className="collection-password flex flex-col items-start basis-1/2">
+          <Label>Collection Password</Label>
+          <Input title={"wallet name"}></Input>
+        </div>
+        <div className="collection-password flex flex-col items-start basis-1/2">
+          <Label>Encrypted Password *:</Label>
+          <Input title={"wallet name"}></Input>
+          <div className="description mt-[10px] flex items-start justify-start text-left">
+            <div className="mt-1 mr-2">
+              <IoEllipse color={"#38ae00"}></IoEllipse>
             </div>
-            <div className="collection-password flex flex-col items-start basis-1/2">
-                <Label >Encrypted Password *:</Label>
-                <Input title={'wallet name'}></Input>
-              <div className="description mt-[10px] flex items-start justify-start text-left">
-              <div className="mt-1 mr-2">
-                <IoEllipse color={"#38ae00"}></IoEllipse>
-              </div>
-              <p className="text-left text-[18px] leading-[27px] font-medium text-[#ffffff80]">
-                {" "}
-                This is the wallet's encryption password, not the user's password.              </p>
-            </div>
-            <div className="withdraw mt-[66px] flex justify-end items-end w-100">
-                <Button type={'green'} text={'Withdraw'}></Button>
-            </div>
-            </div>
+            <p className="text-left text-[18px] leading-[27px] font-medium text-[#ffffff80]">
+              {" "}
+              This is the wallet's encryption password, not the user's password.{" "}
+            </p>
+          </div>
+          <div className="withdraw mt-[66px] flex justify-end items-end w-100">
+            <Button
+              type={"green"}
+              text={"Withdraw"}
+              handleClick={handleClick}
+            ></Button>
+          </div>
+        </div>
       </div>
+     <Modal title={'Withdrawal Successful.'} setModalShow = {setModalShow} show = {modalShow} description={'The withdrawal was successfully reported.'} buttonCaption={'Thanks'} status={'success'}>
+     </Modal>
     </div>
   );
 };

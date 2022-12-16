@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import BlurCircle from "../../components/common/BlurCircle";
 import Button from "../../components/common/Button";
 import Input from "../../components/common/Input";
 import Label from "../../components/common/Label";
 import Select from "../../components/common/Select";
-import Wallet from "../../components/wallet";
 import { BsDot } from "react-icons/bs";
 
 const Create = () => {
@@ -17,26 +15,27 @@ const Create = () => {
     setModalShow(true);
   };
   return (
-    <div className="create min-h-screen bg-back px-[15%] py-16 flex flex-col relative">
-      <div className="w-100">
-        <div className="btn-group flex justify-between">
-          <div>
-            <Button type={"green"} text={"Contact Us"}></Button>
-            <Button type={"green"} text={"Distributor"}></Button>
-            <Button type={"green"} text={"Messages"}></Button>
-          </div>
-          <div>
-            <Button type={"red"} text={"Exit"}></Button>
+    <div className="create min-h-screen bg-back px-1 sm:px-5 py-16 flex flex-col relative justify-center items-center">
+     <div className="content w-11/12 2xl:w-2/3">
+        <div className="">
+          <div className="btn-group flex justify-center sm:justify-between scale-100 flex-wrap gap-3">
+            <div className="flex gap-3 flex-wrap justify-center sm:justify-start">
+              <Button type={"green"} text={"Contact Us"}></Button>
+              <Button type={"green"} text={"Distributor"}></Button>
+              <Button type={"green"} text={"Messages"}></Button>
+            </div>
+            <div>
+              <Button type={"red"} text={"Exit"}></Button>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="wallet-content bg-[#474747] mt-[46px] px-[70px] py-[23px] rounded-3xl w-100">
-        <div className="title text-left text-[37px] leading-[56px] font-bold text-white">
+      <div className="wallet-content bg-[#474747] mt-[46px] px-2 sm:px-[70px] py-[23px] rounded-3xl w-100">
+        <div className="title text-center sm:text-left text-[37px] leading-[56px] font-bold text-white">
           New Wallet Opening:
         </div>
         <div>
           <form action="" className="w-100">
-            <div className="items flex justify-between space-x-10">
+            <div className="items flex flex-col lg:flex-row justify-between gap-10">
               <div className="item flex basis-1/2 flex-col items-start">
                 <Label>Wallet Name *</Label>
                 <Input title={"wallet name"}></Input>
@@ -46,7 +45,7 @@ const Create = () => {
                 <Select></Select>
               </div>
             </div>
-            <div className="items flex justify-between mt-[23px] space-x-10">
+            <div className="items flex flex-col lg:flex-row  justify-between mt-[23px] gap-10">
               <div className="item flex flex-col basis-1/2  items-start">
                 <Label>Country</Label>
                 <Input title={"country"}></Input>
@@ -57,10 +56,10 @@ const Create = () => {
               </div>
             </div>
 
-            <div className="items flex justify-between mt-[32px] items-end space-x-10">
+            <div className="items flex flex-col lg:flex-row  justify-between mt-[32px] lg:items-end gap-10">
               <div className="item flex flex-col items-start basis-1/2   ">
                 <Label>Free Value</Label>
-                <div className="w-100 h-[239px] px-[54px] py-[25px] bg-[#44444480] border-[#ffffff33] rounded-[45px] border-[3px] flex flex-col justify-between">
+                <div className="w-100 gap-3 px-[16px] xl:px-[54px] py-[25px] bg-[#44444480] border-[#ffffff33] rounded-[45px] border-[3px] flex flex-col">
                   <Input title={"free value name"} size={"442px"}></Input>
                   <Input title={"free value"} size={"442px"}></Input>
                 </div>
@@ -154,6 +153,7 @@ const Create = () => {
           </button>
         </div>
       </div>
+    </div>
     </div>
   );
 };

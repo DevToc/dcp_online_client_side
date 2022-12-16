@@ -1,11 +1,11 @@
 import React from "react";
 
-const Movements = ({ isActive, handleClick }) => {
+const Movements = ({ isActive, handleClick,open }) => {
   return (
     <a
       href="movements"
       onClick={handleClick("movements")}
-      className={`flex items-center p-2 space-x-3 ${
+      className={`flex  ${!open?'w-100 justify-center':''} items-center p-2 space-x-3 ${
         isActive ? "border-r-4 border-[#38ae00]" : ""
       }`}
     >
@@ -91,7 +91,7 @@ const Movements = ({ isActive, handleClick }) => {
         </svg>
       )}
 
-      <span className={isActive ? "text-white" : ""}>Movements</span>
+     { open && <span className={isActive ? `text-white` : ``}>Movements</span>}
     </a>
   );
 };

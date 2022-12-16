@@ -1,11 +1,11 @@
 import React from 'react';
  
-const Transfer = ({isActive,handleClick}) => {
+const Transfer = ({isActive,handleClick, open}) => {
   return (
     <a
     href="transfer"
     onClick={handleClick('transfer')}
-    className={`flex items-center p-2 space-x-3 ${isActive?'border-r-4 border-[#38ae00]':''}`}
+    className={`flex  ${!open?'w-100 justify-center':''} items-center p-2 space-x-3 ${isActive?'border-r-4 border-[#38ae00]':''}`}
   >
     {isActive?(<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M3.20545 16.9535C3.22436 16.9555 3.24327 16.9562 3.26219 16.9562C3.57588 16.9562 3.84913 16.7299 3.90391 16.4149C3.94174 16.1977 4.88737 11.0874 9.78313 11.0874H18.9134V13.696C18.9134 13.9543 19.0653 14.1877 19.3021 14.2927C19.5381 14.3971 19.8133 14.3527 20.0044 14.1786L27.1782 7.65701C27.3138 7.53309 27.3914 7.35832 27.3914 7.17441C27.3914 6.9905 27.3138 6.81572 27.1782 6.69181L20.0044 0.170211C19.8133 -0.00391524 19.5375 -0.0489143 19.3021 0.0560834C19.0653 0.161081 18.9134 0.394554 18.9134 0.65281V3.91361H9.78313C5.89496 3.91361 2.60938 6.9005 2.60938 10.4352V16.3046C2.60937 16.6431 2.86828 16.9248 3.20545 16.9535ZM3.91369 10.4352C3.91369 7.60744 6.6019 5.21793 9.78313 5.21793H19.5655C19.9262 5.21793 20.2177 4.92576 20.2177 4.56577V2.12734L25.7702 7.17441L20.2177 12.2215V10.4352C20.2177 10.0752 19.9262 9.78305 19.5655 9.78305H9.78313C6.74211 9.78305 4.94672 11.4108 3.91369 13.0262V10.4352Z" fill="#38AE00"/>
@@ -29,8 +29,8 @@ xmlns="http://www.w3.org/2000/svg"
 </svg>}
    
 
-    <span className={isActive?'text-white':''}>Transfer</span>
-  </a>
+{  open &&  <span className={isActive?'text-white':''}>Transfer</span>
+}  </a>
   );
 }
  

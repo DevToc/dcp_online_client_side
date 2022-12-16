@@ -6,22 +6,22 @@ import Movements from "./MenuItem/Movements/Index";
 import Transfer from "./MenuItem/Transfer/Index";
 import Withdraw from "./MenuItem/Withdraw/Index";
 const Header = (props) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const [activeUrl, setActiveUrl] = useState("home");
   const navigate = useNavigate();
   const handleClick = (url) => (e) => {
     e.preventDefault();
     setActiveUrl(url)
 
-    navigate(`${url}`)
+    navigate(`/${url}`)
   };
 
   return (
     <div className="flex bg-back">
       <div
         className={` ${
-          open ? "w-40" : "w-[312px]"
-        } flex flex-col h-screen pb-[25px] bg-back shadow duration-300 border-r-2 border-r-[#474747]`}
+          !open? "w-[121px]" : "w-[312px]"
+        } flex flex-col min-h-screen pb-[25px] bg-back shadow duration-300 border-r-2 border-r-[#474747]`}
       >
         <div className="w-100">
           <div className="flex justify-center items-center space-x-4 border-b-2 border-b-[#474747] w-100 pb-[12px] pt-[25px]">
@@ -31,39 +31,44 @@ const Header = (props) => {
               width={"49px"}
               className="h-[50px]"
             />
-            <p className="text-[16.32px] leading-[24px] font-normal text-white">
+         {  open&& <p className={`text-[16.32px] leading-[24px] font-normal text-white`}>
               Dcp Wallet
-            </p>
+            </p>}
           </div>
 
-          <div className="flex-1 py-[52px] pl-[52px]">
+          <div className={`flex-1 py-[52px] ${!open?' ':'pl-[52px] '}`}>
             <ul className="pt-13 pb-4 space-y-[72px] text-[17.7px] leading-[27px] text-[#6c6c6c] font-medium">
-              <li className="rounded-sm">
+              <li className="rounded-sm flex items-center">
                 <HomeMenu
                   isActive={activeUrl === "home"}
+                  open = {open}
                   handleClick={handleClick}
                 ></HomeMenu>
               </li>
               <li className="rounded-sm">
                 <Movements
+                 open = {open}
                   isActive={activeUrl === "movements"}
                   handleClick={handleClick}
                 ></Movements>
               </li>
               <li className="rounded-sm">
                 <Withdraw
+                 open = {open}
                   isActive={activeUrl === "withdraw"}
                   handleClick={handleClick}
                 ></Withdraw>
               </li>
               <li className="rounded-sm">
                 <Transfer
+                 open = {open}
                   isActive={activeUrl === "transfer"}
                   handleClick={handleClick}
                 ></Transfer>
               </li>
               <li className="rounded-sm">
                 <Messages
+                 open = {open}
                   isActive={activeUrl === "messages"}
                   handleClick={handleClick}
                 ></Messages>

@@ -1,11 +1,11 @@
 import React from "react";
 
-const Withdraw = ({ isActive,handleClick }) => {
+const Withdraw = ({ isActive,handleClick, open }) => {
   return (
     <a
       href="withdraw"
       onClick={handleClick('withdraw')}
-      className={`flex items-center p-2 space-x-3 ${
+      className={`flex  ${!open?'w-100 justify-center':''} items-center p-2 space-x-3 ${
         isActive ? "border-r-4 border-[#38ae00]" : ""
       }`}
     >
@@ -114,7 +114,7 @@ const Withdraw = ({ isActive,handleClick }) => {
           </defs>
         </svg>
       )}
-      <span className={isActive ? "text-white" : ""}>WithDraw</span>
+     { open && <span className={isActive ? "text-white" : ""}>WithDraw</span>}
     </a>
   );
 };

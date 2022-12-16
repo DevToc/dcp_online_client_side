@@ -1,15 +1,14 @@
   import React from "react";
   import PropTypes from "prop-types";
 
-  const Messages = ({ isActive, handleClick }) => {
+  const Messages = ({ isActive, handleClick, open }) => {
     return (
       <a
-        href="messages"
-        onClick={handleClick("messages")}
-        className={`flex items-center p-2 space-x-3 ${
-          isActive ? "border-r-4 border-[#38ae00]" : ""
-        }`}
-      >
+      href="messages"
+      onClick={handleClick('messages')}
+      className={`flex  ${!open?'w-100 justify-center':''} items-center p-2 space-x-3 ${isActive?'border-r-4 border-[#38ae00]':''}`}
+    >
+      
         {isActive ? (
           <svg
             width="30"
@@ -70,8 +69,8 @@
           </svg>
         )}
 
-        <span className={isActive ? "text-white" : ""}>Messages</span>
-      </a>
+{    open &&  <span className={isActive ? "text-white" : ""}>Messages</span>
+}      </a>
     );
   };
 
