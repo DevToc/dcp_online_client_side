@@ -51,6 +51,7 @@ function App() {
             {routes.map((route, index) => {
               return (
                 <Route
+                key={index}
                   path={route.url}
                   element={
                     <Header>

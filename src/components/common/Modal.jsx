@@ -94,7 +94,7 @@ const Modal = ({
           <button
             className="text-white bg-[#38ae00] px-[48px] py-[11px] text-[20px] leading-[30px] font-semibold rounded-[25.3px]"
             onClick={e=>{setModalShow(false)
-              navigate(`${to}`)
+              if(to!==undefined) navigate(`${to}`)
             }}
           >
             {buttonCaption}

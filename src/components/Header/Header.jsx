@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router";
+import React, { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 import HomeMenu from "./MenuItem/Home/Index";
 import Messages from "./MenuItem/Messages/Index";
 import Movements from "./MenuItem/Movements/Index";
@@ -7,68 +8,97 @@ import Transfer from "./MenuItem/Transfer/Index";
 import Withdraw from "./MenuItem/Withdraw/Index";
 const Header = (props) => {
   const [open, setOpen] = useState(true);
-  const [activeUrl, setActiveUrl] = useState("home");
+  const location = useLocation()
+  const [activeUrl, setActiveUrl] = useState(location.pathname.slice(1));
   const navigate = useNavigate();
   const handleClick = (url) => (e) => {
     e.preventDefault();
-    setActiveUrl(url)
-
-    navigate(`/${url}`)
+    setActiveUrl(url);
+    navigate(`/${url}`);
   };
+    const [screenSize, getDimension] = useState({
+      dynamicWidth: window.innerWidth,
+      dynamicHeight: window.innerHeight
+    });
+    const setDimension = () => {
+      getDimension({
+        dynamicWidth: window.innerWidth,
+        dynamicHeight: window.innerHeight
+      })
+    }
+   
+    useEffect(() => {
+      window.addEventListener('resize', setDimension);
+      if(screenSize.dynamicWidth<1145){
+        setOpen(false)
+      }
+      else {
+        setOpen(true)
+      }
+      
+      return(() => {
+          window.removeEventListener('resize', setDimension);
+      })
+    }, [screenSize])
+   
 
   return (
     <div className="flex bg-back">
       <div
         className={` ${
-          !open? "w-[121px]" : "w-[312px]"
+          !open ? "min-w-[50px]" : "min-w-[312px]"
         } flex flex-col min-h-screen pb-[25px] bg-back shadow duration-300 border-r-2 border-r-[#474747]`}
       >
         <div className="w-100">
-          <div className="flex justify-center items-center space-x-4 border-b-2 border-b-[#474747] w-100 pb-[12px] pt-[25px]">
+          <Link to={'/home'} className="flex justify-center items-center space-x-4 border-b-2 border-b-[#474747] w-100 pb-[12px] pt-[25px]">
             <img
               src="/assets/images/currency.png"
               alt=""
               width={"49px"}
               className="h-[50px]"
             />
-         {  open&& <p className={`text-[16.32px] leading-[24px] font-normal text-white`}>
-              Dcp Wallet
-            </p>}
-          </div>
+            {open && (
+              <p
+                className={`text-[16.32px] leading-[24px] font-normal text-white`}
+              >
+                Dcp Wallet
+              </p>
+            )}
+          </Link>
 
-          <div className={`flex-1 py-[52px] ${!open?' ':'pl-[52px] '}`}>
+          <div className={`flex-1 py-[52px] ${!open ? " " : "pl-[52px] w-100"}`}>
             <ul className="pt-13 pb-4 space-y-[72px] text-[17.7px] leading-[27px] text-[#6c6c6c] font-medium">
-              <li className="rounded-sm flex items-center">
+              <li className="rounded-sm">
                 <HomeMenu
                   isActive={activeUrl === "home"}
-                  open = {open}
+                  open={open}
                   handleClick={handleClick}
                 ></HomeMenu>
               </li>
               <li className="rounded-sm">
                 <Movements
-                 open = {open}
+                  open={open}
                   isActive={activeUrl === "movements"}
                   handleClick={handleClick}
                 ></Movements>
               </li>
               <li className="rounded-sm">
                 <Withdraw
-                 open = {open}
+                  open={open}
                   isActive={activeUrl === "withdraw"}
                   handleClick={handleClick}
                 ></Withdraw>
               </li>
               <li className="rounded-sm">
                 <Transfer
-                 open = {open}
+                  open={open}
                   isActive={activeUrl === "transfer"}
                   handleClick={handleClick}
                 ></Transfer>
               </li>
               <li className="rounded-sm">
                 <Messages
-                 open = {open}
+                  open={open}
                   isActive={activeUrl === "messages"}
                   handleClick={handleClick}
                 ></Messages>
@@ -76,7 +106,7 @@ const Header = (props) => {
             </ul>
           </div>
           <div className="mt-10 flex justify-center text-[#6c6c6c]">
-            <a href="" className="flex items-center space-x-2">
+            <Link to="/login" className="flex items-center space-x-2">
               <svg
                 width="34"
                 height="34"
@@ -93,46 +123,17 @@ const Header = (props) => {
                   fill="#6C6C6C"
                 />
               </svg>{" "}
-              <span>Exit</span>
-            </a>
+              {open && <span>Exit</span>}
+            </Link>
           </div>
         </div>
       </div>
-      <div className="home  w-100">
-        <div className="title text-[32px] lead-[48px] font-normal text-white h-[89px] w-100 text-left border-b-2 border-b-[#474747] w-100 px-5 pt-[34px]">
+      <div className="home w-100">
+        <div className="title text-[32px] lead-[48px] font-normal text-white h-[89px] border-b-2 border-b-[#474747] px-1 md:px-5 pt-[34px] text-center">
           dcp wallet name
         </div>
         {props.children}
       </div>
-
-      {/* <div className="container mx-auto mt-12">
-              <div className="grid grid-cols-1 gap-6 mb-6 lg:grid-cols-3">
-                  <div className="w-full px-4 py-5 bg-white rounded-lg shadow">
-                      <div className="text-sm font-medium text-gray-500 truncate">
-                          Total users
-                      </div>
-                      <div className="mt-1 text-3xl font-semibold text-gray-900">
-                          12,00
-                      </div>
-                  </div>
-                  <div className="w-full px-4 py-5 bg-white rounded-lg shadow">
-                      <div className="text-sm font-medium text-gray-500 truncate">
-                          Total Profit
-                      </div>
-                      <div className="mt-1 text-3xl font-semibold text-gray-900">
-                          $ 450k
-                      </div>
-                  </div>
-                  <div className="w-full px-4 py-5 bg-white rounded-lg shadow">
-                      <div className="text-sm font-medium text-gray-500 truncate">
-                          Total Orders
-                      </div>
-                      <div className="mt-1 text-3xl font-semibold text-gray-900">
-                          20k
-                      </div>
-                  </div>
-              </div>
-          </div> */}
     </div>
   );
 };

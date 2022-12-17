@@ -1,21 +1,43 @@
-import React from "react";
+import React,{useState, useEffect} from "react";
 import Button from "../../components/common/Button";
 import Label from "../../components/common/Label";
 
 import { BiCopy } from "react-icons/bi";
-import { BsDot } from "react-icons/bs";
 import { IoEllipse } from "react-icons/io5";
 
 const Home = () => {
+  
+
+  const [screenSize, getDimension] = useState({
+    dynamicWidth: window.innerWidth,
+    dynamicHeight: window.innerHeight
+  });
+  const setDimension = () => {
+    getDimension({
+      dynamicWidth: window.innerWidth,
+      dynamicHeight: window.innerHeight
+    })
+  }
+  
+  useEffect(() => {
+    window.addEventListener('resize', setDimension);
+ 
+    
+    
+    return(() => {
+        window.removeEventListener('resize', setDimension);
+    })
+  }, [screenSize])
+
   return (
-    <div className="home px-[60px] py-[54px]">
+    <div className="home pl-[40px] pr-[20px] py-[54px]">
       <div className="title text-left text-[37px] leading-[56px]  font-bold text-white">
         My Account:
       </div>
-      <div className="balance flex space-x-5">
+      <div className="balance gap-4 flex flex-wrap ">
         <div className="amount">
           <div className="rounded-[16px]   bg-gradient-to-b p-[1px] from-[#38ae00ff]  to-[#38ae0000]">
-            <div className="flex   text-white bg-[#474747] rounded-[16px] px-[22px] py-[15px] items-center space-x-[76px]">
+            <div className="flex flex-col sm:flex-row text-white bg-[#474747] rounded-[16px] px-[22px] py-[15px] items-center gap-3 sm:gap-5">
               <div className="flex flex-col">
                 <Label size={"small"}>Account Balance:</Label>
                 <div className="count text-[39px] leading-[58px] text-white font-semibold">
@@ -39,7 +61,7 @@ const Home = () => {
         </div>
         <div className="detail">
           <div className="rounded-[16px]   bg-gradient-to-b p-[1px] from-[#38ae00ff]  to-[#38ae0000]">
-            <div className="flex   text-white bg-[#474747] rounded-[16px] px-[22px] py-[15px] items-center space-x-[76px]">
+            <div className="flex   text-white bg-[#474747] rounded-[16px] px-[22px] py-[15px] items-center gap-5">
               <div className="flex flex-col text-left">
                 <Label size={"small"}>Wallet Name:</Label>
                 <div className="count text-[18px] leading-[27px] text-white font-semibold">
@@ -71,19 +93,19 @@ const Home = () => {
         <div className="identify-content flex flex-col mt-[10px] items-start space-y-10">
           <div className="content flex flex-col text-left">
             <Label size={"small"}>Identity</Label>
-            <div className="info relative w-[360px]">
+            <div className="info relative w-[200px] sm:w-[360px]">
               <input
                 type="text"
                 value={"82-j4-91-cc-8"}
-                className="bg-[#474747] text-white w-[360px] border-2 border-[#009600] rounded-[33px] text-base font-semibold px-[15px] py-[13px] "
+                className="bg-[#474747] text-white w-[200px] sm:w-[360px] border-2 border-[#009600] rounded-[33px] text-base font-semibold px-[15px] py-[13px] outline-none"
               />
               <div className="absolute right-4 top-4">
                 <BiCopy color="white" size={"20px"}></BiCopy>
               
               </div>
             </div>
-            <div className="description mt-[10px] flex items-center justify-start text-left">
-              <div className="mt-0 mr-2">
+            <div className="description mt-[10px] flex items-start justify-start text-left">
+              <div className="mt-1 mr-2">
                 <IoEllipse color={"#38ae00"}></IoEllipse>
               </div>
               <p className="text-left text-[18px] leading-[27px] font-medium text-[#ffffff80]">
@@ -92,14 +114,14 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div className="btn-group flex space-x-10">
+          <div className="btn-group flex gap-5 flex-wrap">
             <Button type={"green"} text={"Withdraw"} size={"medium"}></Button>
             <Button type={"orange"} text={"Transfer"} size={"medium"}></Button>
             <Button type={"red"} text={"Movement"} size={"medium"}></Button>
           </div>
         </div>
       </div>
-      <div className="last-movements mt-[50px]">
+    {screenSize.dynamicWidth>830  && <div className="last-movements mt-[50px]">
         <div className="title text-[37px] leading-[56px] font-bold text-white text-left">
           Last Movements
         </div>
@@ -108,7 +130,7 @@ const Home = () => {
             <thead className=" text-base text-[#ffffff66]">
               <tr>
                 <td>Date</td>
-                <td>Transaction id</td>
+                <td>{ screenSize.dynamicWidth>1180? `Transaction id`:'ID'}</td>
                 <td>Status</td>
                 <td>Amount</td>
                 <td>Total</td>
@@ -180,7 +202,7 @@ const Home = () => {
             </tbody>
           </table>
         </div>
-      </div>
+      </div>}
     </div>
   );
 };
