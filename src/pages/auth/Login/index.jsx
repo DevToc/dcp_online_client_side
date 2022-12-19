@@ -35,10 +35,7 @@ const Login = () => {
             Easiest way to manage your wallet.
           </div>
           <div className="hidden lg:block text-[20px] leading-[30px] font-normal text-whiteWithOpacity max-w-xl text-left">
-            Quia veritatis qui aut magnam rerum animi omnis exercitationem.
-            Minus sapiente suscipit quaerat sint. Possimus omnis vel ullam
-            officiis. Itaque maxime asperiores omnis qui odio sunt hic. Et ea
-            tenetur pariatur dolorum est corrupti nostrum.
+          A secure DCP wallet, to save receipt and verify the transfer of the coins, without fees and without the need for a third party
           </div>
         </div>
         <div className="lg:basis-1/2 mt-[77px] max-w-[733px]">

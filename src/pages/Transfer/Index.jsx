@@ -1,13 +1,19 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React,{useState} from "react"
+
 import Input from "../../components/common/Input";
 import Label from "../../components/common/Label";
-import { IoEllipse } from "react-icons/io5";
 import Button from "../../components/common/Button";
 import Plus from "../../components/Plus/Index";
 import Description from "../../components/Description/Index";
+import Benefit from "../../components/Benefit/Index";
 
 const Transfer = () => {
+
+  const [beneficiaries, setBeneficiaries] = useState([1]);
+  const handlePlus = () => {
+    setBeneficiaries([...beneficiaries,1]);
+  }
+
   return (
     <div className="transfer pr-[20px] pl-[40px] py-[52px] ">
       <div className="flex  flex-col items-start">
@@ -33,17 +39,16 @@ const Transfer = () => {
         <div className="title text-[32px] leading-[48px] text-white text-left font-bold">
           Beneficiaries:
         </div>
-        <div className="wallet flex flex-col mt-[10px] items-start">
-          <Label>Wallet ID</Label>
-          <Input title={"wallet id"}></Input>
-        </div>
-        <div className="password flex flex-col mt-[30px] items-start">
-          <Label>Password</Label>
-          <Input title={"password"} type={'password'}></Input>
-        </div>
+       {
+        beneficiaries.map((item,index)=>{
+          return (
+            <Benefit></Benefit>
+          )
+        })
+       }
         <div className="flex justify-between items-center mt-[17px]">
           <Description>At least one is required.</Description>
-        <Plus/>
+        <Plus  handleClick= {handlePlus} />
         </div>
       </div>
       

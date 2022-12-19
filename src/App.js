@@ -1,18 +1,20 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Login from "./pages/auth/Login";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap";
-import "./App.css";
+
 import Register from "./pages/auth/Register";
 import Main from "./pages/Main";
 import Create from "./pages/create";
 import Home from "./pages/Home/Index";
 import Header from "./components/Header/Header";
-import Movements from "./pages/Movements/Index";
+import Movements from "./pages/Movements/Index"
 import Withdraw from "./pages/Withdraw/Index";
-import Transfer from "./pages/Transfer/Index";
+import Transfer from "./pages/Transfer/Index"
 import Messages from "./pages/Messages/Index";
+
+import "bootstrap/dist/js/bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 
 const routes = [
   {

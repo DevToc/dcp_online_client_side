@@ -1,16 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
+
 import HomeMenu from "./MenuItem/Home/Index";
 import Messages from "./MenuItem/Messages/Index";
 import Movements from "./MenuItem/Movements/Index";
 import Transfer from "./MenuItem/Transfer/Index";
 import Withdraw from "./MenuItem/Withdraw/Index";
+
 const Header = (props) => {
+
   const [open, setOpen] = useState(true);
   const location = useLocation()
   const [activeUrl, setActiveUrl] = useState(location.pathname.slice(1));
   const navigate = useNavigate();
+
+  useEffect(()=>{
+      setActiveUrl(location.pathname.slice(1))
+  },[location])
+
   const handleClick = (url) => (e) => {
     e.preventDefault();
     setActiveUrl(url);
@@ -26,7 +34,9 @@ const Header = (props) => {
         dynamicHeight: window.innerHeight
       })
     }
-   
+   useEffect(()=>{
+      setActiveUrl(location.pathname.slice(1))
+   },[location.path])
     useEffect(() => {
       window.addEventListener('resize', setDimension);
       if(screenSize.dynamicWidth<1145){

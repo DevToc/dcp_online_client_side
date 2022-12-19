@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import Label from "../../components/common/Label";
 import Input from "../../components/common/Input";
 
-import { IoEllipse } from "react-icons/io5";
 import Button from "../../components/common/Button";
 import Modal from "../../components/common/Modal";
 import useScreen from "../../hooks/useScreen";
+import Description from "../../components/Description/Index";
 
 const Withdraw = () => {
   const [modalShow, setModalShow] = useState(false);
@@ -36,20 +36,12 @@ const Withdraw = () => {
       <div className="password flex md:flex-row flex-col  mt-[29px] max-w-[1125px] gap-5 w-5/5 2xl:w-4/5">
         <div className="collection-password flex flex-col items-start basis-1/2">
           <Label>Collection Password</Label>
-          <Input title={"wallet name"}></Input>
+          <Input title={"collection password"}></Input>
         </div>
         <div className="collection-password flex flex-col items-start basis-1/2">
           <Label>Encrypted Password *:</Label>
-          <Input title={"wallet name"}></Input>
-          <div className="description mt-[10px] flex items-start justify-start text-left">
-            <div className="mt-1 mr-2">
-              <IoEllipse color={"#38ae00"}></IoEllipse>
-            </div>
-            <p className="text-left text-[18px] leading-[27px] font-medium text-[#ffffff80]">
-              {" "}
-              This is the wallet's encryption password, not the user's password.{" "}
-            </p>
-          </div>
+          <Input title={"encrypted password"}></Input>
+         <Description>This is the wallet's encryption password, not the user's password.</Description>
           <div className="withdraw mt-[66px] flex justify-center md:justify-end items-end w-100">
             <Button
               type={"green"}

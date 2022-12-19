@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { BiHide, BiShow } from "react-icons/bi";
-import { IoEllipse } from "react-icons/io5";
+
 import LeftTexture from "../../../components/Texture/LeftTexture/Index";
 import RightTexture from "../../../components/Texture/RightTexture/Index";
 import BlurCircle from "../../../components/common/BlurCircle";
 import Label from "../../../components/common/Label";
 import Input from "../../../components/common/Input";
-import MOdal from "../../../components/common/Modal";
-import "./index.scss";
 import Modal from "../../../components/common/Modal";
+import Description from "../../../components/Description/Index";
+import "./index.scss";
 
 const Register = () => {
   const [isHide, setHide] = useState(true);
@@ -39,10 +39,8 @@ const Register = () => {
             Easiest way to manage your wallet.
           </div>
           <div className="hidden lg:block text-[20px] leading-[30px] font-normal text-whiteWithOpacity max-w-xl text-left">
-            Quia veritatis qui aut magnam rerum animi omnis exercitationem.
-            Minus sapiente suscipit quaerat sint. Possimus omnis vel ullam
-            officiis. Itaque maxime asperiores omnis qui odio sunt hic. Et ea
-            tenetur pariatur dolorum est corrupti nostrum.
+            A secure DCP wallet, to save receipt and verify the transfer of the
+            coins, without fees and without the need for a third party
           </div>
         </div>
         <div className="basis-1/2 mt-[88px] max-w-[733px]">
@@ -107,16 +105,7 @@ const Register = () => {
                 </div>
               </div>
             </div>
-            <div className="description  flex items-start justify-start text-left mt-2">
-              <div className="mt-1 mr-2">
-                <IoEllipse color={"#38ae00"}></IoEllipse>
-              </div>
-              <p className="text-left text-[18px] leading-[27px] font-medium text-[#ffffff80]">
-                {" "}
-                This is the wallet's encryption password, not the user's
-                password.{" "}
-              </p>
-            </div>
+           <Description>the password is secret and cannot be recovered, keep it in a secure place!</Description>
             <div className="btn-register mt-[30px]">
               <button
                 className="text-white bg-[#38ae00] px-[95px] py-[11px] text-[27px] leading-[40px] font-semibold rounded-[31.5px]"
@@ -139,9 +128,15 @@ const Register = () => {
           </div>
         </div>
       </div>
-<Modal title={"Successfully Registered"} description={'You are successfully registered to your account.'} status={'success'} show={modalShow} setModalShow = {setModalShow} buttonCaption={'Thanks'} to = {'/login'}>
-
-</Modal>
+      <Modal
+        title={"Successfully Registered"}
+        description={"You are successfully registered to your account."}
+        status={"success"}
+        show={modalShow}
+        setModalShow={setModalShow}
+        buttonCaption={"Thanks"}
+        to={"/login"}
+      ></Modal>
     </div>
   );
 };

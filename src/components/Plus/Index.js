@@ -1,9 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
  
-const Plus = () => {
+const Plus = ({handleClick}) => {
   return (
-    <div className="rounded-[33px] w-[66px] h-[66px]  bg-gradient-to-b p-[1px] from-[#38ae00ff]  to-[#38ae0000]">
+    <div className="rounded-[33px] w-[66px] h-[66px]  bg-gradient-to-b p-[1px] from-[#38ae00ff]  to-[#38ae0000]" onClick = {handleClick}>
     <div className="flex  cursor-pointer text-white bg-[#474747] w-[64px] h-[64px] rounded-[32px] px-[22px] py-[15px] items-center space-x-[76px]">
       <svg
         width="32"
@@ -29,7 +28,5 @@ const Plus = () => {
   </div>
   );
 }
- 
-Plus.propTypes = {};
  
 export default Plus;
