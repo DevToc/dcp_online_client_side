@@ -42,7 +42,7 @@ const Home = () => {
       </div>
       <div className="balance gap-4 flex flex-wrap ">
         <div className="amount">
-          <div className="rounded-[16px]   bg-gradient-to-b p-[1px] from-[#38ae00ff]  to-[#38ae0000]">
+          <div className="rounded-[16px]   bg-gradient-to-b p-[1px] from-[#38ae00ff]  to-[#38ae0050]">
             <div className="flex flex-col sm:flex-row text-white bg-[#474747] rounded-[16px] px-[22px] py-[15px] items-center gap-3 sm:gap-5">
               <div className="flex flex-col">
                 <Label size={"small"}>Account Balance:</Label>
@@ -66,7 +66,7 @@ const Home = () => {
           </div>
         </div>
         <div className="detail">
-          <div className="rounded-[16px]   bg-gradient-to-b p-[1px] from-[#38ae00ff]  to-[#38ae0000]">
+          <div className="rounded-[16px]   bg-gradient-to-b p-[1px] from-[#38ae00ff]  to-[#38ae0050]">
             <div className="flex   text-white bg-[#474747] rounded-[16px] px-[22px] py-[15px] items-center gap-5">
               <div className="flex flex-col text-left">
                 <Label size={"small"}>Wallet Name:</Label>

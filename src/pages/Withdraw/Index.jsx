@@ -30,7 +30,7 @@ const Withdraw = () => {
           value={`{'amount': 70.0, 'beneficiaries': ['package.id equal b5b99124-1444-417a-9fcf-04944861cf68'], 'beneficiaries_sha': ' d745e2f7aa1cff52b038bb33fec756942c7142a862519a1bc89a9f84704d9e10', 'transaction_id': 'ef0581ca-bb48-494d-862a-81sd84214dec'}`}
           id=""
           rows={screenSize.dynamicWidth<935?8: 5}
-          className="bg-[#474747] w-100  outline-none py-4 px-6 border-2 border-[#009600] rounded-[45px] text-white text-[23px] leading-[34px] font-medium"
+          className="overflow-keys bg-[#474747] w-100  outline-none py-4 px-6 border-2 border-[#009600] rounded-[45px] text-white text-[23px] leading-[34px] font-medium"
         ></textarea>
       </div>
       <div className="password flex md:flex-row flex-col  mt-[29px] max-w-[1125px] gap-5 w-5/5 2xl:w-4/5">

@@ -19,14 +19,14 @@ const Login = () => {
   useEffect(()=>{document.title = "Login"},[]);
   
   return (
-    <div className=" w-screen min-h-screen bg-back text-white py-2 px-4 sm:px-16  items-center relative">
+    <div className="w-max-screen min-h-screen bg-back text-white py-2 px-[16px] sm:px-[64px]  items-center relative">
       <LeftTexture />
       <RightTexture/>
       <div className="filter absolute top-[-41px] left-[38px]">
         <BlurCircle/>
       </div>
-      <div className="flex flex-col lg:flex-row justify-center items-center lg:space-x-24">
-        <div className="lg:basis-1/2  lg:pt-32 pt-14 max-w-[678px]">
+      <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start space-x-0 lg:space-x-[30px] xl:space-x-[70px] 2xl:space-x-[159px]">
+        <div className="lg:basis-1/2  lg:pt-[131px] pt-14 max-w-[678px]">
           <div className="title flex items-center justify-center lg:justify-start">
             <img src="/assets/images/currency.png" alt="" className="sm:w-[103px] sm:h-[110px] w-[50px] h-[52px]" />
             <p className=" ml-[15px] text-[34px] leading-[51px] font-normal ">
@@ -36,12 +36,12 @@ const Login = () => {
           <div className="description mt-[22px] font-bold text-[40px] leading-[50px] xl:leading-[86px] xl:text-[57px] lg:text-[48px] lg:leading-[70px] min-[20px]:text-center  lg:text-left ">
             Easiest way to manage your wallet.
           </div>
-          <div className="hidden lg:block text-[20px] leading-[30px] font-normal text-whiteWithOpacity max-w-xl text-left">
+          <div className="hidden lg:block text-[20px] leading-[30px] font-normal text-whiteWithOpacity max-w-xl text-left mt-[15px]">
           A secure DCP wallet, to save receipt and verify the transfer of the coins, without fees and without the need for a third party
           </div>
         </div>
         <div className="lg:basis-1/2 mt-[77px] max-w-[733px]">
-          <div className="login px-4 lg:px-[48px]  py-[48px] bg-[#474747] rounded-[44px]">
+          <div className="login px-[16px] lg:px-[93px]  py-[48px] bg-[#474747] rounded-[44px]">
             <div className="title text-[40px] leading-[50px] xl:leading-[86px] xl:text-[57px] lg:text-[48px] lg:leading-[70px]  font-bold w-100">
               Hi, Welcome Back!
             </div>

@@ -6,5 +6,4 @@ const Input = ({title, size, value,type}) => {
   );
 }
  
- 
 export default Input; 
