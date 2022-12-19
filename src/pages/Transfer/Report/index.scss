@@ -1,0 +1,19 @@
+.overflow-keys::-webkit-scrollbar-track
+{
+	// -webkit-box-shadow: inset 0 0 6px #38ae00;
+	border-radius: 3px;
+	background-color: #d9d9d933;
+}
+
+.overflow-keys::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #d9d9d933;
+}
+
+.overflow-keys::-webkit-scrollbar-thumb
+{
+	border-radius: 6px;
+	-webkit-box-shadow: inset 0 0 6px #38ae00;
+	background-color: #38ae00;
+}

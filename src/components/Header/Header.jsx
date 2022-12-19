@@ -60,7 +60,7 @@ const Header = (props) => {
         } flex flex-col min-h-screen pb-[25px] bg-back shadow duration-300 border-r-2 border-r-[#474747]`}
       >
         <div className="w-100">
-          <Link to={'/home'} className="flex justify-center items-center space-x-4 border-b-2 border-b-[#474747] w-100 pb-[12px] pt-[25px]">
+          <Link to={'/main'} className="flex justify-center items-center space-x-4 border-b-2 border-b-[#474747] w-100 pb-[12px] pt-[25px]">
             <img
               src="/assets/images/currency.png"
               alt=""

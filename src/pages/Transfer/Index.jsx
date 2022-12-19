@@ -1,4 +1,4 @@
-import React,{useState} from "react"
+import React,{useState, useEffect} from "react"
 
 import Input from "../../components/common/Input";
 import Label from "../../components/common/Label";
@@ -6,12 +6,18 @@ import Button from "../../components/common/Button";
 import Plus from "../../components/Plus/Index";
 import Description from "../../components/Description/Index";
 import Benefit from "../../components/Benefit/Index";
+import { useNavigate } from "react-router";
 
 const Transfer = () => {
-
+  useEffect(()=>{document.title = "Transfer"},[]);
+  const navigate = useNavigate();
   const [beneficiaries, setBeneficiaries] = useState([1]);
   const handlePlus = () => {
     setBeneficiaries([...beneficiaries,1]);
+  }
+
+  const handleMake = () => {
+    navigate('/report');
   }
 
   return (
@@ -58,7 +64,7 @@ const Transfer = () => {
         <Description>This is the wallet's encryption password, not the user's password.</Description>
       </div>
       <div className="btn-transfer mt-[20px] flex justify-center xl:justify-start">
-          <Button type={'green'} text='Make the Transfer' size={'large'}></Button>
+          <Button type={'green'} text='Make the Transfer' size={'large'} handleClick = {handleMake}></Button>
       </div>
     </div>
   );

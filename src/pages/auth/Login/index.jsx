@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BiHide, BiShow } from "react-icons/bi";
 import { Link, useNavigate } from "react-router-dom";
 import BlurCircle from "../../../components/common/BlurCircle";
@@ -16,6 +16,8 @@ const Login = () => {
       navigate('/main');
   }
 
+  useEffect(()=>{document.title = "Login"},[]);
+  
   return (
     <div className=" w-screen min-h-screen bg-back text-white py-2 px-4 sm:px-16  items-center relative">
       <LeftTexture />

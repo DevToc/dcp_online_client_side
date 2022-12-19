@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { BiHide, BiShow } from "react-icons/bi";
 
@@ -15,7 +15,7 @@ const Register = () => {
   const [isHide, setHide] = useState(true);
   const [isConfirmHide, setConfirmHide] = useState(true);
   const [modalShow, setModalShow] = useState(false);
-
+  useEffect(()=>{document.title = "Register"},[]);
   return (
     <div className="max-w-screen min-h-screen bg-back text-white py-2 px-4 lg:px-16  items-center relative">
       <LeftTexture />

@@ -15,6 +15,7 @@ import Messages from "./pages/Messages/Index";
 import "bootstrap/dist/js/bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import Report from "./pages/Transfer/Report/Index";
 
 const routes = [
   {
@@ -37,6 +38,10 @@ const routes = [
   {
     url: "messages",
     component: Messages,
+  },
+  {
+    url: "report",
+    component: Report,
   },
 ];
 function App() {

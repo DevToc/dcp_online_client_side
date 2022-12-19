@@ -1,10 +1,11 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { Link } from "react-router-dom";
 import BlurCircle from "../../components/common/BlurCircle";
 import Button from "../../components/common/Button";
 import Wallet from "../../components/wallet";
-
 const Main = () => {
+  useEffect(()=>{document.title = "Main"},[]);
+
   return (
     <div className="main min-h-screen bg-back  px-12 py-16 flex relative justify-center">
       <div className="filter absolute top-[-454px] left-[-454px]">

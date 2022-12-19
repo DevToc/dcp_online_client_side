@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { IoEllipse } from "react-icons/io5";
 import Button from "../../components/common/Button";
 import Input from "../../components/common/Input";
@@ -13,6 +13,7 @@ const Create = () => {
     e.preventDefault();
     setModalShow(true);
   };
+  useEffect(()=>{document.title = "Create New Wallet"},[]);
   return (
     <div className="create min-h-screen bg-back px-1 sm:px-5 py-16 flex flex-col relative justify-center items-center">
       <div className="content w-11/12 2xl:w-2/3">
@@ -41,7 +42,7 @@ const Create = () => {
                 </div>
                 <div className="item flex flex-col basis-1/2 items-start">
                   <Label>Type</Label>
-                  <Select></Select>
+                  <Select options = {["private","business","charity"]}></Select>
                 </div>
               </div>
               <div className="items flex flex-col lg:flex-row  justify-between mt-[23px] gap-10">
@@ -65,7 +66,7 @@ const Create = () => {
                 </div>
                 <div className="item flex flex-col items-start basis-1/2  ">
                   <Label>Encrypted Password: *</Label>
-                  <Input title={"wallet name"}></Input>
+                  <Input title={"encrypted password"}></Input>
                   <div className="description  flex items-start justify-start text-left mt-2">
                     <div className="mt-1 mr-2">
                       <IoEllipse color={"#38ae00"}></IoEllipse>
