@@ -56,7 +56,7 @@ const Register = () => {
                 <Label>Username</Label>
               </div>
               <div>
-                <Input title={"usernname"}></Input>
+                <Input title={"username"}></Input>
               </div>
             </div>
 
@@ -68,7 +68,7 @@ const Register = () => {
                 <input
                   placeholder="Enter password"
                   type={isHide ? "password" : "text"}
-                  className="py-[8px] sm:py-[17px] placeholder:font-normal placeholder-[#ffffff43] w-100 py-[17px] text-[23px] leading-[34px] font-semibold text-white px-3 bg-[#47474780] border-[3px] border-[#ffffff43] focus:border-[#009600]  rounded-[45px] focus:outline-none"
+                  className="py-[8px] sm:py-[17px] placeholder:font-normal placeholder-[#ffffff43] w-100  text-[23px] leading-[34px] font-semibold text-white px-3 bg-[#47474780] border-[3px] border-[#ffffff43] focus:border-[#009600]  rounded-[45px] focus:outline-none"
                 />
                 <div
                   className="absolute right-7 top-4  z-100"
