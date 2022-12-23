@@ -5,6 +5,10 @@ import Input from "../../components/common/Input";
 import Label from "../../components/common/Label";
 import Modal from "../../components/common/Modal";
 import Select from "../../components/common/Select";
+import BlurCircle from "../../components/common/BlurCircle";
+import Banner from "../../components/Banner/Index";
+import MainButton from "../../components/common/MainButton";
+import Description from '../../components/Description/Index'
 
 const Create = () => {
   const [modalShow, setModalShow] = useState(false);
@@ -15,27 +19,32 @@ const Create = () => {
   };
   useEffect(()=>{document.title = "Create New Wallet"},[]);
   return (
-    <div className="create min-h-screen bg-back px-1 sm:px-5 py-16 flex flex-col relative justify-center items-center">
-      <div className="content w-11/12 2xl:w-2/3">
-        <div className="">
-          <div className="btn-group flex justify-center sm:justify-between scale-100 flex-wrap gap-3">
-            <div className="flex gap-3 flex-wrap justify-center sm:justify-start">
-              <Button type={"green"} text={"Contact Us"}></Button>
-              <Button type={"green"} text={"Distributor"}></Button>
-              <Button type={"green"} text={"Messages"}></Button>
-            </div>
-            <div>
-              <Button type={"red"} text={"Exit"}></Button>
-            </div>
+    <div className="main min-h-screen bg-back py-[11px] px-[23px]  sm:px-12 sm:py-16 flex relative justify-center">
+    <div className="filter absolute top-[-454px] left-[-454px]">
+      <BlurCircle />
+    </div>
+
+    <div className="content flex flex-col ">
+      <Banner />
+      <div className="">
+        <div className="btn-group flex justify-center sm:justify-between  flex-wrap gap-3">
+          <div className="flex gap-3 sm:flex-wrap justify-between sm:justify-start">
+            <MainButton type={"green"} text={"Contact Us"}></MainButton>
+            <MainButton type={"green"} text={"Distributor"}></MainButton>
+            <MainButton type={"green"} text={"Messages"}></MainButton>
+          </div>
+          <div>
+            <MainButton type={"red"} text={"Exit"}></MainButton>
           </div>
         </div>
-        <div className="wallet-content bg-[#474747] mt-[46px]  px-[12px] md:px-[70px] py-[23px] rounded-3xl w-100">
-          <div className="title min-w-0:text-center sm:text-left text-[37px] leading-[56px] font-bold text-white">
+      </div>
+        <div className="wallet-content bg-[#474747] mt-[30px]  px-[20px] md:px-[70px] py-[21px] rounded-[19px] sm:rounded-3xl w-100">
+          <div className="title min-w-0:text-center sm:text-left text-[24px] leading-[36px] sm:text-[37px] sm:leading-[56px] font-bold text-white">
             New Wallet Opening:
           </div>
           <div>
             <form action="" className="w-100">
-              <div className="items flex flex-col lg:flex-row justify-between gap-10">
+              <div className="items flex flex-col lg:flex-row justify-between gap-[10px] sm:gap-10">
                 <div className="item flex basis-1/2 flex-col items-start">
                   <Label>Wallet Name *</Label>
                   <Input title={"wallet name"}></Input>
@@ -45,7 +54,7 @@ const Create = () => {
                   <Select options = {["private","business","charity"]}></Select>
                 </div>
               </div>
-              <div className="items flex flex-col lg:flex-row  justify-between mt-[23px] gap-10">
+              <div className="items flex flex-col lg:flex-row  justify-between mt-[23px]gap-[10px] sm:gap-10">
                 <div className="item flex flex-col basis-1/2  items-start">
                   <Label>Country</Label>
                   <Input title={"country"}></Input>
@@ -56,7 +65,7 @@ const Create = () => {
                 </div>
               </div>
 
-              <div className="items flex flex-col lg:flex-row  justify-between mt-[32px] lg:items-end gap-10">
+              <div className="items flex flex-col lg:flex-row  justify-between mt-[10px] sm:mt-[32px] lg:items-end  sm:gap-10">
                 <div className="item flex flex-col items-start basis-1/2   ">
                   <Label>Free Value</Label>
                   <div className="w-100 gap-3 px-[16px] xl:px-[54px] py-[25px] bg-[#44444480] border-[#ffffff33] rounded-[45px] border-[3px] flex flex-col">
@@ -67,19 +76,13 @@ const Create = () => {
                 <div className="item flex flex-col items-start basis-1/2  ">
                   <Label>Encrypted Password: *</Label>
                   <Input title={"encrypted password"}></Input>
-                  <div className="description  flex items-start justify-start text-left mt-2">
-                    <div className="mt-1 mr-2">
-                      <IoEllipse color={"#38ae00"}></IoEllipse>
-                    </div>
-                    <p className="text-left text-[18px] leading-[27px] font-medium text-[#ffffff80]">
-                      {" "}
-                      This is the wallet's encryption password, not the user's
-                      password.{" "}
-                    </p>
-                  </div>
+                  <Description>
+                  This is the wallet's encryption password, not the user's
+                      password.
+                  </Description>
                 </div>
               </div>
-              <div className="btn-save mt-[81px]">
+              <div className="btn-save mt-[30px] sm:mt-[81px]">
                 <Button
                   type={"red"}
                   text={"Cancel"}
