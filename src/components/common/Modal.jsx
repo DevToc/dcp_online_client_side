@@ -13,7 +13,7 @@ const Modal = ({
 }) => {
   const navigate = useNavigate();
   const screen = useScreen();
-  return (
+return (
     <div
       id="overlay"
       className={

@@ -1,46 +1,51 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import Banner from "../../components/Banner/Index";
 import BlurCircle from "../../components/common/BlurCircle";
-import Button from "../../components/common/Button";
+import MainButton from "../../components/common/MainButton";
 import Wallet from "../../components/wallet";
+import "./index.scss"
 const Main = () => {
-  useEffect(()=>{document.title = "Main"},[]);
+  useEffect(() => {
+    document.title = "Main";
+  }, []);
 
   return (
-    <div className="main min-h-screen bg-back  px-12 py-16 flex relative justify-center">
+    <div className="main min-h-screen bg-back py-[11px] px-[23px]  sm:px-12 sm:py-16 flex relative justify-center">
       <div className="filter absolute top-[-454px] left-[-454px]">
         <BlurCircle />
       </div>
-      <div className="content w-11/12 lg:w-2/3">
+
+      <div className="content flex flex-col ">
+        <Banner />
         <div className="">
-          <div className="btn-group flex justify-center sm:justify-between scale-100 flex-wrap gap-3">
-            <div className="flex gap-3 flex-wrap justify-center sm:justify-start">
-              <Button type={"green"} text={"Contact Us"}></Button>
-              <Button type={"green"} text={"Distributor"}></Button>
-              <Button type={"green"} text={"Messages"}></Button>
+          <div className="btn-group flex justify-center sm:justify-between  flex-wrap gap-3">
+            <div className="flex gap-3 sm:flex-wrap justify-between sm:justify-start">
+              <MainButton type={"green"} text={"Contact Us"}></MainButton>
+              <MainButton type={"green"} text={"Distributor"}></MainButton>
+              <MainButton type={"green"} text={"Messages"}></MainButton>
             </div>
             <div>
-              <Button type={"red"} text={"Exit"}></Button>
+              <MainButton type={"red"} text={"Exit"}></MainButton>
             </div>
           </div>
         </div>
-        <div className="wallet-content bg-[#474747] mt-[46px]  py-[60px] rounded-3xl w-100">
-          <div className="wallets flex justify-start w-100  flex-wrap">
+        <div className="wallet-content bg-[#474747] mt-[30px] sm:mt-[46px] rounded-3xl w-100 px-[24px] py-[30px]">
+          <div className="wallets flex justify-center w-100 gap-[19px] sm:gap-[40px] flex-wrap ">
             <Wallet></Wallet>
             <Wallet></Wallet>
             <Wallet></Wallet>
             <Wallet></Wallet>
           </div>
-          <div className="btn-create-wallet mt-[127px]">
+          <div className="btn-create-wallet mt-[52px] sm:mt-[127px]">
             <Link
-              to="/create
-      "
+              to="/create"
             >
-              <Button
-                type={"green"}
-                text={"+ Create new wallet"}
-                size={"large"}
-              ></Button>
+              <button
+                className={`create text-white text-[13px] leading-[20px] bg-[#38ae00] py-[8px] px-[37.5px] text-center sm:py-[5px] sm:text-[23px] sm:leading-[34px] font-semibold sm:rounded-[31.5px] rounded-[18px]`}
+              >
+                + Create New Wallet
+              </button>
             </Link>
           </div>
         </div>
