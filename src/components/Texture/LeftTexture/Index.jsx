@@ -2,7 +2,7 @@ import React from "react";
 
 const LeftTexture = () => {
   return (
-    <div className="left-texture absolute top-[21px] left-[0px]">
+    <div className="left-texture absolute top-[21px] left-[0px] hidden sm:block">
       <svg
         width="105"
         height="852"

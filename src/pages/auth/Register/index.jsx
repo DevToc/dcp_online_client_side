@@ -85,13 +85,13 @@ const Register = () => {
 
             <div className="confirm-password mt-[20px]  mb-[20px]">
               <div className="title text-left">
-                <Label>Confirm Passowrd</Label>
+                <Label>Confirm Password</Label>
               </div>
               <div className="relative">
                 <input
                   placeholder="Confirm password"
                   type={isConfirmHide ? "password" : "text"}
-                  className="py-[8px] sm:py-[17px] placeholder:font-normal placeholder-[#ffffff43] w-100 py-[17px] text-[23px] leading-[34px] font-semibold text-white px-3 bg-[#47474780] border-[3px] border-[#ffffff43] focus:border-[#009600]  rounded-[45px] focus:outline-none"
+                  className="py-[8px] sm:py-[17px] placeholder:font-normal placeholder-[#ffffff43] w-100  text-[23px] leading-[34px] font-semibold text-white px-3 bg-[#47474780] border-[3px] border-[#ffffff43] focus:border-[#009600]  rounded-[45px] focus:outline-none"
                 />
                 <div
                   className="absolute right-7 top-4  z-100"

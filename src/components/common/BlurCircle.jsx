@@ -2,7 +2,7 @@ import React from 'react';
  
 const BlurCircle = () => {
   return (
-    <div className="w-[454px] h-[454px] bg-[#38ae0099] blur-[302px]"></div>
+    <div className="sm:w-[454px] sm:h-[454px] w-[387px] h-[387px] bg-[#38ae0099] blur-[302px]"></div>
   );
 }
  
