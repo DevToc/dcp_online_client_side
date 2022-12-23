@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router";
+import useScreen from "../../hooks/useScreen";
 
 const Modal = ({
   title,
@@ -11,6 +12,7 @@ const Modal = ({
   to
 }) => {
   const navigate = useNavigate();
+  const screen = useScreen();
   return (
     <div
       id="overlay"
@@ -24,16 +26,17 @@ const Modal = ({
         id="dialog"
         className={
         
-           " fixed justify-center flex flex-col items-center z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-auto bg-white rounded-[34px] px-[16px] py-[20px] sm:px-[65px] sm:py-[59px] space-y-5 drop-shadow-lg max-w-[724px]"
+           " fixed justify-center flex flex-col items-center z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-auto bg-white rounded-[34px] px-[26px] py-[51px] sm:px-[65px] sm:py-[59px] space-y-5 drop-shadow-lg max-w-[724px]"
         }
       >
         <div
           className={`flex justify-center items-center ${
             status === "success" ? "bg-[#38ae00]" : "bg-[#ff0707]"
-          } w-[172px] h-[172px] rounded-[86px]`}
+          } sm:w-[172px] sm:h-[172px] w-[77px] h-[77px] rounded-[38px] sm:rounded-[86px]`}
         >
           <div>
             {status == "success" ? (
+              screen.dynamicWidth>678?
               <svg
                 width="100"
                 height="77"
@@ -53,7 +56,19 @@ const Modal = ({
                   stroke="#38AE00"
                   stroke-width="3"
                 />
+              </svg>:
+              <svg width="46" height="35" viewBox="0 0 46 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_688_840)">
+              <path d="M38.4709 1.53473L38.1664 1.20467L37.8372 1.51008L17.1725 20.6808L8.59986 11.5323L8.29366 11.2055L7.96689 11.5117L2.09444 17.0145L1.76767 17.3207L2.07387 17.6475L16.4157 32.9527L16.7202 33.2777L17.0469 32.975L43.9037 8.08264L44.2314 7.77894L43.9284 7.45057L38.4709 1.53473Z" fill="white" stroke="white" stroke-width="0.895623"/>
+              <path d="M16.6603 21.7714L17.1173 22.2591L17.6073 21.8046L38.1048 2.78894L42.6512 7.71711L16.7758 31.6997L3.35009 17.3722L8.24224 12.7879L16.6603 21.7714Z" fill="white" stroke="#38AE00" stroke-width="1.34343"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_688_840">
+              <rect width="44.7811" height="34.4815" fill="white" transform="translate(0.609375 0.0471191)"/>
+              </clipPath>
+              </defs>
               </svg>
+              
             ) : (
               <svg
                 width="92"
@@ -84,15 +99,15 @@ const Modal = ({
             )}
           </div>
         </div>
-        <div className="title mt-30px text-[#353536] text-[47px] leading-[70px] font-bold">
+        <div className="title mt-[13px] sm:mt-30px text-[#353536] text-[21px] leading-[32px] sm:text-[47px] sm:leading-[70px] font-bold">
           {title}
         </div>
-        <div className="description  text-[#353536] text-[36px] leading-[54px] font-normal px-3">
+        <div className="description  text-[#353536] text-[16px] leading-[24px] sm:text-[36px] sm:leading-[54px] font-normal px-[33px]">
           {description}
         </div>
-        <div className="thanks">
+        <div className="thanks mt-[20px]">
           <button
-            className="text-white bg-[#38ae00] px-[48px] py-[11px] text-[20px] leading-[30px] font-semibold rounded-[25.3px]"
+            className="text-white bg-[#38ae00] py-[6px] px-[31px] sm:px-[48px] sm:py-[11px] sm:text-[20px] text-[13.5px] leading-[20px] sm:leading-[30px] font-semibold rounded-[25.3px]"
             onClick={e=>{setModalShow(false)
               if(to!==undefined) navigate(`${to}`)
             }}
