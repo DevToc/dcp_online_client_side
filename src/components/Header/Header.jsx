@@ -9,7 +9,8 @@ import Transfer from "./MenuItem/Transfer/Index";
 import Withdraw from "./MenuItem/Withdraw/Index";
 
 const Header = (props) => {
-
+  const location = useLocation();
+  const [open, setOpen] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
   const [mobile, setMobile] = useState(false);
   const [activeUrl, setActiveUrl] = useState(location.pathname.slice(1));
@@ -19,7 +20,7 @@ const Header = (props) => {
   });
 
   const navigate = useNavigate();
-  const location = useLocation();
+   
 
   useEffect(() => {
     setActiveUrl(location.pathname.slice(1));
@@ -256,6 +257,7 @@ const Header = (props) => {
                   handleClick={handleClick}
                 ></Messages>
               </li>
+
               <li className="flex justify-center items-center ">
                 <Link to="/main" className={` space-x-3 flex items-center`}>
                   <svg
