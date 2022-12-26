@@ -7,11 +7,9 @@ const HomeMenu = ({ isActive, handleClick, open, mobile }) => {
     <a
       href="home"
       onClick={handleClick("home")}
-      className={`flex  ${
-        !open ? "w-100 justify-center" : ""
-      } items-center p-2 space-x-3 ${
+      className={`flex   items-center p-2 space-x-3 ${
         isActive ? "border-r-4 border-[#38ae00]" : ""}
-      } ${mobile?"justify-center":"hidden"} `}
+      } ${mobile?"justify-center":""} `}
     >
       {isActive ? (
         <svg
@@ -48,10 +46,7 @@ const HomeMenu = ({ isActive, handleClick, open, mobile }) => {
           />
         </svg>
       )}
-
-      {open && (
         <span className={isActive ? `text-white ` : ``}>Home Panel</span>
-      )}
     </a>
   );
 };

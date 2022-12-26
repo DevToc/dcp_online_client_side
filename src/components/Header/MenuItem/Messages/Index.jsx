@@ -9,9 +9,7 @@ const Messages = ({ isActive, handleClick, open, mobile }) => {
     <a
       href="messages"
       onClick={handleClick("messages")}
-      className={`flex  ${
-        !open ? "w-100 justify-center" : ""
-      } items-center p-2 space-x-3 ${
+      className={`flex  items-center p-2 space-x-3 ${
         isActive ? "border-r-4 border-[#38ae00]" : ""
       } ${mobile?"justify-center":""}`}
     >
@@ -74,7 +72,7 @@ const Messages = ({ isActive, handleClick, open, mobile }) => {
           />
         </svg>
       )}
-      {open && <span className={isActive ? "text-white" : ""}>Messages</span>}{" "}
+    <span className={isActive ? "text-white" : ""}>Messages</span>
     </a>
   );
 };

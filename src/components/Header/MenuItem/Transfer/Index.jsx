@@ -5,9 +5,7 @@ const Transfer = ({ isActive, handleClick, open, mobile }) => {
     <a
       href="transfer"
       onClick={handleClick("transfer")}
-      className={`flex ${mobile ? "justify-center" : "hidden"}  ${
-        !open ? "w-100 justify-center" : ""
-      } items-center p-2 space-x-3 ${
+      className={`flex ${mobile ? "justify-center" : ""}  items-center p-2 space-x-3 ${
         isActive ? "border-r-4 border-[#38ae00]" : ""
       }`}
     >
@@ -46,7 +44,7 @@ const Transfer = ({ isActive, handleClick, open, mobile }) => {
           />
         </svg>
       )}
-      {open && <span className={isActive ? "text-white" : ""}>Transfer</span>}{" "}
+  <span className={isActive ? "text-white" : ""}>Transfer</span>
     </a>
   );
 };

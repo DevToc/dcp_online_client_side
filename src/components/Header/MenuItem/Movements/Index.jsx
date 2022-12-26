@@ -5,9 +5,9 @@ const Movements = ({ isActive, handleClick,open, mobile }) => {
     <a
       href="movements"
       onClick={handleClick("movements")}
-      className={`flex  ${!open?'w-100 justify-center':''} items-center p-2 space-x-3 ${
+      className={`flex  items-center p-2 space-x-3 ${
         isActive ? "border-r-4 border-[#38ae00]" : "" 
-      } ${mobile?"justify-center":"hidden"}`}
+      } ${mobile?"justify-center":""}`}
     >
       {isActive ? (
         <svg
@@ -91,7 +91,7 @@ const Movements = ({ isActive, handleClick,open, mobile }) => {
         </svg>
       )}
 
-     { open && <span className={isActive ? `text-white` : ``}>Movements</span>}
+<span className={isActive ? `text-white` : ``}>Movements</span>
     </a>
   );
 };

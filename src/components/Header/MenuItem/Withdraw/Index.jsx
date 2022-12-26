@@ -5,9 +5,9 @@ const Withdraw = ({ isActive,handleClick, open, mobile }) => {
     <a
       href="withdraw"
       onClick={handleClick('withdraw')}
-      className={`flex  ${!open?'w-100 justify-center':''} items-center p-2 space-x-3 ${
+      className={`flex  items-center p-2 space-x-3 ${
         isActive ? "border-r-4 border-[#38ae00]" : ""
-      } ${mobile?"justify-center":"hidden"}`}
+      } ${mobile?"justify-center":""}`}
     >
       {isActive ? (
         <svg
@@ -114,7 +114,7 @@ const Withdraw = ({ isActive,handleClick, open, mobile }) => {
           </defs>
         </svg>
       )}
-     { open && <span className={isActive ? "text-white" : ""}>WithDraw</span>}
+  <span className={isActive ? "text-white" : ""}>WithDraw</span>
     </a>
   );
 };
