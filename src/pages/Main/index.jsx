@@ -1,11 +1,15 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+
 import Banner from "../../components/Banner/Index";
 import BlurCircle from "../../components/common/BlurCircle";
 import MainButton from "../../components/common/MainButton";
 import Wallet from "../../components/wallet";
+
 import "./index.scss"
+
 const Main = () => {
+  
   useEffect(() => {
     document.title = "Main";
   }, []);

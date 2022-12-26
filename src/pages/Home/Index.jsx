@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Button from "../../components/common/Button";
-import Label from "../../components/common/Label";
 import { BiCopy, BiCheck } from "react-icons/bi";
+
+import Label from "../../components/common/Label";
 import DateIcon from "../../components/common/DateIcon";
 import Description from "../../components/Description/Index";
+
 import "./index.scss";
 
 const Home = () => {
@@ -17,6 +18,12 @@ const Home = () => {
     document.title = "Home";
   }, []);
 
+  useEffect(() => {
+    window.addEventListener("resize", setDimension);
+    return () => {
+      window.removeEventListener("resize", setDimension);
+    };
+  }, [screenSize]);
   const handleCopy = () => {
     navigator.clipboard.writeText(identity);
     setCopied(true);
@@ -30,13 +37,6 @@ const Home = () => {
       dynamicHeight: window.innerHeight,
     });
   };
-
-  useEffect(() => {
-    window.addEventListener("resize", setDimension);
-    return () => {
-      window.removeEventListener("resize", setDimension);
-    };
-  }, [screenSize]);
 
   return (
     <div className="home sm:pl-[40px] sm:pr-[20px] sm:py-[54px] py-[28px] px-[20px]">
@@ -157,9 +157,7 @@ const Home = () => {
               <thead className=" text-base text-[#ffffff66]">
                 <tr>
                   <td>Date</td>
-                  <td>
-                    Transaction id
-                  </td>
+                  <td>Transaction id</td>
                   <td>Status</td>
                   <td>Amount</td>
                   <td>Total</td>

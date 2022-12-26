@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
+
 import useScreen from "../../hooks/useScreen";
 import Button from "../../components/common/Button";
+
 import "./index.scss";
-import { useNavigate } from "react-router";
 
 const messages = [
   {
@@ -22,12 +24,14 @@ const messages = [
 const Messages = () => {
   const [selected, setSelected] = useState(-1);
   const navigate = useNavigate();
-  const handleSelect = (index) => e => {
+  const handleSelect = (index) => (e) => {
     setSelected(index);
-    if(screenSize.dynamicWidth<=1033)
-        navigate(`/messages/${index}`)
-  }
+    if (screenSize.dynamicWidth <= 1033) navigate(`/messages/${index}`);
+  };
   const screenSize = useScreen();
+  useEffect(() => {
+    document.title = "Messages";
+  }, []);
   return (
     <div className="message pl-[40px] pr-[20px] py-[54px] flex space-x-8">
       <div

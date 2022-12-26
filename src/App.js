@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Login from "./pages/auth/Login";
-
 import Register from "./pages/auth/Register";
 import Main from "./pages/Main";
 import Create from "./pages/create";
@@ -12,11 +11,12 @@ import Withdraw from "./pages/Withdraw/Index";
 import Transfer from "./pages/Transfer/Index"
 import Messages from "./pages/Messages/Index";
 import DetailMessage from "./pages/Messages/Detail";
+import Report from "./pages/Transfer/Report/Index";
 
 import "bootstrap/dist/js/bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import Report from "./pages/Transfer/Report/Index";
+
 
 const routes = [
   {
@@ -58,7 +58,6 @@ function App() {
           <Route path="/register" exact element={<Register></Register>}></Route>
           <Route path="/main" exact element={<Main></Main>}></Route>
           <Route path="/create" exact element={<Create></Create>}></Route>
-
           <Route path="/">
             {routes.map((route, index) => {
               return (

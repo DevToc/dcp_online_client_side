@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { IoEllipse } from "react-icons/io5";
+
 import Button from "../../components/common/Button";
 import Input from "../../components/common/Input";
 import Label from "../../components/common/Label";
@@ -11,6 +11,7 @@ import MainButton from "../../components/common/MainButton";
 import Description from '../../components/Description/Index'
 
 const Create = () => {
+
   const [modalShow, setModalShow] = useState(false);
 
   const handleClick = (e) => {
@@ -18,6 +19,7 @@ const Create = () => {
     setModalShow(true);
   };
   useEffect(()=>{document.title = "Create New Wallet"},[]);
+  
   return (
     <div className="main min-h-screen bg-back py-[11px] px-[23px]  sm:px-12 sm:py-16 flex relative justify-center">
     <div className="filter absolute top-[-454px] left-[-454px]">

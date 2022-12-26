@@ -1,7 +1,11 @@
 import React from "react";
-import "./index.scss"
+import { useParams } from "react-router";
+
+import "./index.scss";
 
 const DetailMessage = () => {
+  const { id } = useParams();
+  console.log(id);
   return (
     <div className="w-100 px-[20px] py-[28px]">
       <div className="detail border-2 border-[#474747] rounded-[20px] flex flex-col">
@@ -31,7 +35,5 @@ const DetailMessage = () => {
     </div>
   );
 };
-
-DetailMessage.propTypes = {};
 
 export default DetailMessage;

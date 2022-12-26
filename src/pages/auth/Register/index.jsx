@@ -10,8 +10,9 @@ import Input from "../../../components/common/Input";
 import Modal from "../../../components/common/Modal";
 import Description from "../../../components/Description/Index";
 import BottomTexture from "../../../components/Texture/BottomTexture/Index";
-import "./index.scss";
 import useScreen from "../../../hooks/useScreen";
+
+import "./index.scss";
 
 const Register = () => {
   const [isHide, setHide] = useState(true);
@@ -119,12 +120,12 @@ const Register = () => {
               </button>
             </div>
             <div className="register-now  flex justify-center xl:flex-row flex-col mt-[43px] xl:mt-[57px]">
-              <p className="text-[#ffffff80] text-[23px] leading-[34px]">
+              <p className="text-[#ffffff80] text-[15px] leading-[22px] sm:text-[23px] sm:leading-[34px]">
                 Still not registered?
               </p>
               <Link
                 to="/login"
-                className="font-bold ml-3 text-[#ffffff] text-[23px] leading-[34px] "
+                className="font-bold ml-3 text-[#ffffff] text-[15px] leading-[22px] sm:text-[23px] sm:leading-[34px] "
               >
                 Login Now
               </Link>

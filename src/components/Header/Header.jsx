@@ -25,6 +25,17 @@ const Header = (props) => {
     setActiveUrl(location.pathname.slice(1));
   }, [location]);
 
+  useEffect(() => {
+    setActiveUrl(location.pathname.slice(1));
+  }, [location.path]);
+
+  useEffect(() => {
+    window.addEventListener("resize", setDimension);
+    return () => {
+      window.removeEventListener("resize", setDimension);
+    };
+  }, [screenSize]);
+
   const handleClick = (url) => (e) => {
     e.preventDefault();
     setActiveUrl(url);
@@ -39,19 +50,6 @@ const Header = (props) => {
       dynamicHeight: window.innerHeight,
     });
   };
-
-  useEffect(() => {
-    setActiveUrl(location.pathname.slice(1));
-  }, [location.path]);
-
-  useEffect(() => {
-    window.addEventListener("resize", setDimension);
- 
-
-    return () => {
-      window.removeEventListener("resize", setDimension);
-    };
-  }, [screenSize]);
 
   if (screenSize.dynamicWidth >= 1000)
     return (
@@ -72,7 +70,6 @@ const Header = (props) => {
                   width={"49px"}
                   className="h-[50px]"
                 />
-
                 <p
                   className={`text-[16.32px] leading-[24px] font-normal text-white`}
                 >
@@ -80,7 +77,6 @@ const Header = (props) => {
                 </p>
               </Link>
             )}
-
             <div
               className={`flex-1 py-[52px] ${!open ? " " : "pl-[52px] w-100"}`}
             >
@@ -115,27 +111,6 @@ const Header = (props) => {
                     handleClick={handleClick}
                   ></Messages>
                 </li>
-                {/* <li className="rounded-sm text-white">
-                  <Link
-                    to="main"
-                    className={`flex} items-center p-2 space-x-3 justify-center w-100 h-100`}
-                  >
-                    <svg
-                      width="13"
-                      height="12"
-                      viewBox="0 0 13 12"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M0 11.6418H12.6567V9.79599H0V11.6418ZM0 7.02734H12.6567V5.18157H0V7.02734ZM0 0.567139V2.41291H12.6567V0.567139H0Z"
-                        fill="white"
-                        fillOpacity="0.2"
-                      />
-                    </svg>
-                    <span className={`text-white `}>Wallets list</span>
-                  </Link>
-                </li> */}
               </ul>
             </div>
             <div className="mt-10 flex justify-center text-[#6c6c6c]">
@@ -285,26 +260,25 @@ const Header = (props) => {
                   handleClick={handleClick}
                 ></Messages>
               </li>
-        
-                <li className="flex justify-center items-center">
-                  <Link to="/main" className={` space-x-3 flex items-center`}>
-                    <svg
-                      width="13"
-                      height="12"
-                      viewBox="0 0 13 12"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M0 11.6418H12.6567V9.79599H0V11.6418ZM0 7.02734H12.6567V5.18157H0V7.02734ZM0 0.567139V2.41291H12.6567V0.567139H0Z"
-                        fill="white"
-                        fillOpacity="0.2"
-                      />
-                    </svg>
-                    <span>Wallets list</span>
-                  </Link>
-                </li>
-          
+
+              <li className="flex justify-center items-center">
+                <Link to="/main" className={` space-x-3 flex items-center`}>
+                  <svg
+                    width="13"
+                    height="12"
+                    viewBox="0 0 13 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 11.6418H12.6567V9.79599H0V11.6418ZM0 7.02734H12.6567V5.18157H0V7.02734ZM0 0.567139V2.41291H12.6567V0.567139H0Z"
+                      fill="white"
+                      fillOpacity="0.2"
+                    />
+                  </svg>
+                  <span>Wallets list</span>
+                </Link>
+              </li>
             </ul>
             <div className="mt-10 flex justify-center text-[#6c6c6c]">
               <Link to="/login" className="flex items-center space-x-2">
@@ -328,9 +302,7 @@ const Header = (props) => {
               </Link>
             </div>
           </div>
-          
         </div>
-
         {!menuOpen && <div>{props.children}</div>}
       </div>
     );
