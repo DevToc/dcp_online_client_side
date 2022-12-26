@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import useScreen from "../../hooks/useScreen";
 import Button from "../../components/common/Button";
 import "./index.scss";
+import { useNavigate } from "react-router";
 
 const messages = [
   {
@@ -19,13 +20,19 @@ const messages = [
 ];
 
 const Messages = () => {
-  const [selected, setSelected] = useState(0);
+  const [selected, setSelected] = useState(-1);
+  const navigate = useNavigate();
+  const handleSelect = (index) => e => {
+    setSelected(index);
+    if(screenSize.dynamicWidth<=1033)
+        navigate(`/messages/${index}`)
+  }
   const screenSize = useScreen();
   return (
     <div className="message pl-[40px] pr-[20px] py-[54px] flex space-x-8">
       <div
         className={`message-box min-w-[300px] w-1/4 border-r-2 ${
-          screenSize.dynamicWidth < 768 ? "w-100" : ""
+          screenSize.dynamicWidth <= 1033 ? "w-100" : ""
         }`}
       >
         <div className="title flex justify-between pr-4 items-center">
@@ -45,7 +52,7 @@ const Messages = () => {
                   className={`text-left py-[7px] px-[13px] ${
                     selected === index ? "bg-[#474747] rounded-[10px]" : " "
                   }`}
-                  onClick={(e) => setSelected(index)}
+                  onClick={handleSelect(index)}
                 >
                   <p
                     className={`text-[20px] leading-[30px] text-white overflow-hidden truncate ${
@@ -67,9 +74,9 @@ const Messages = () => {
           </ul>
         </div>
       </div>
-      {screenSize.dynamicWidth > 768 && (
-        <div className="detail w-2/5 2xl:w-2/4 border-2 border-[#474747] rounded-[20px] flex flex-col ">
-          <div className="title flex px-[28px] py-[23px] border-b-2 border-[#474747] items-center gap-3 justify-between flex-wrap">
+      {screenSize.dynamicWidth > 1033 && (
+        <div className="detail border-2 border-[#474747] rounded-[20px] flex flex-col lg:w-2/6 xl:w-3/6">
+          <div className="title flex px-[28px] py-[23px] border-b-2 border-[#474747] items-center gap-[20px] justify-between flex-wrap">
             <div className="title-text text-[20px] leading-[30px] text-white">
               Steven Hackett
             </div>
@@ -90,7 +97,6 @@ const Messages = () => {
                 text={"Mark as Unread"}
                 category={"message"}
               ></Button>
-         
             </div>
           </div>
           <div className="flex flex-wrap content py-[15px] text-[20px] leading-[30px] text-white font-normal px-[28px] text-left">

@@ -11,6 +11,7 @@ import Movements from "./pages/Movements/Index"
 import Withdraw from "./pages/Withdraw/Index";
 import Transfer from "./pages/Transfer/Index"
 import Messages from "./pages/Messages/Index";
+import DetailMessage from "./pages/Messages/Detail";
 
 import "bootstrap/dist/js/bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -43,6 +44,10 @@ const routes = [
     url: "report",
     component: Report,
   },
+  {
+    url:"messages/:id",
+    component:DetailMessage
+  }
 ];
 function App() {
   return (
