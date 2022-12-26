@@ -19,14 +19,14 @@ return (
       className={
         !show
           ? "hidden fixed  z-40 w-screen h-screen inset-0 bg-[#000000cc] backdrop-blur-[4px]"
-          : "fixed  z-40 w-screen h-screen inset-0 bg-[#000000cc] backdrop-blur-[4px]"
+          : "fixed  z-40 w-screen h-screen inset-0 bg-[#000000cc] backdrop-blur-[4px] px-[40px]"
       }
     >
       <div
         id="dialog"
         className={
         
-           " fixed justify-center flex flex-col items-center z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-auto bg-white rounded-[34px] px-[26px] py-[51px] sm:px-[65px] sm:py-[59px] space-y-5 drop-shadow-lg max-w-[724px]"
+           " fixed justify-center flex flex-col items-center z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-auto bg-white rounded-[34px] px-[10px] py-[51px] sm:px-[65px] sm:py-[59px] space-y-5 drop-shadow-lg max-w-[724px] min-w-[300px]"
         }
       >
         <div

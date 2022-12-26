@@ -14,9 +14,9 @@ const Withdraw = () => {
     setModalShow(true);
   };
   return (
-    <div className="movements pl-[40px] pr-[20px] py-[54px]">
+    <div className="withdrawal sm:pl-[40px] sm:pr-[20px] sm:py-[54px] px-[20px] py-[28px]">
       <div className="flex  flex-col items-start">
-        <div className="title text-left text-[37px] leading-[56px]  font-bold text-white">
+        <div className="title text-left sm:text-[37px] sm:leading-[56px]  text-[32px] leading-[48px] font-bold text-white">
           Withdrawal
         </div>
         <div className="description text-[22px] leading-[33px] font-normal text-[#6c6c6c] text-left">
@@ -29,25 +29,25 @@ const Withdraw = () => {
           name=""
           value={`{'amount': 70.0, 'beneficiaries': ['package.id equal b5b99124-1444-417a-9fcf-04944861cf68'], 'beneficiaries_sha': ' d745e2f7aa1cff52b038bb33fec756942c7142a862519a1bc89a9f84704d9e10', 'transaction_id': 'ef0581ca-bb48-494d-862a-81sd84214dec'}`}
           id=""
-          rows={screenSize.dynamicWidth<935?8: 5}
-          className="overflow-keys bg-[#474747] w-100  outline-none py-4 px-6 border-2 border-[#009600] rounded-[45px] text-white text-[23px] leading-[34px] font-medium"
+          rows={screenSize.dynamicWidth<935?6: 5}
+          className="overflow-keys bg-[#474747] w-100  outline-none py-[9px] px-[20px] sm:py-4 sm:px-6 border-2 border-[#009600] rounded-[12px] sm:rounded-[45px] text-white sm:text-[23px] sm:leading-[34px] text-[12px] leading-[19px] font-medium"
         ></textarea>
       </div>
-      <div className="password flex md:flex-row flex-col  mt-[29px] max-w-[1125px] gap-5 w-5/5 2xl:w-4/5">
+      <div className="password flex md:flex-row flex-col mt-[10px] sm:mt-[29px] max-w-[1125px] gap-[10px] sm:gap-5 w-5/5 2xl:w-4/5">
         <div className="collection-password flex flex-col items-start basis-1/2">
           <Label>Collection Password</Label>
           <Input title={"collection password"}></Input>
         </div>
-        <div className="collection-password flex flex-col items-start basis-1/2">
+        <div className="collection-password flex flex-col items-start basis-1/2 mb-[7px]">
           <Label>Encrypted Password *:</Label>
           <Input title={"encrypted password"}></Input>
          <Description>This is the wallet's encryption password, not the user's password.</Description>
-          <div className="withdraw mt-[66px] flex justify-center md:justify-end items-end w-100">
-            <Button
-              type={"green"}
-              text={"Withdraw"}
-              handleClick={handleClick}
-            ></Button>
+          <div className="withdraw mt-[30px] sm:mt-[66px] flex justify-center md:justify-end items-end w-100">
+          <button onClick={e=>setModalShow(true)}
+                className={`create text-white text-[15.3px] leading-[23px] bg-[#38ae00] py-[7px] px-[28px] text-center sm:py-[10px] sm:text-[20px] sm:leading-[30px] font-semibold sm:rounded-[25.3px] rounded-[19px] shadow-[0px_0px_19.2962px_#38AE00]`}
+              >
+                Withdraw
+              </button>
           </div>
         </div>
       </div>
