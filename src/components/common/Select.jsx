@@ -14,7 +14,7 @@ const Select = ({options}) => {
           options.map((option, index)=>{
             return <option>{option}</option>
           })
-      )
+      ) 
 }
     </select>
   );

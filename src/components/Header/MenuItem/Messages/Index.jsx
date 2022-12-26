@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-const Messages = ({ isActive, handleClick, open }) => {
+const Messages = ({ isActive, handleClick, open, mobile }) => {
   useEffect(() => {
     document.title = "Messages";
   }, []);
@@ -13,7 +13,7 @@ const Messages = ({ isActive, handleClick, open }) => {
         !open ? "w-100 justify-center" : ""
       } items-center p-2 space-x-3 ${
         isActive ? "border-r-4 border-[#38ae00]" : ""
-      }`}
+      } ${mobile?"justify-center":""}`}
     >
       {isActive ? (
         <svg

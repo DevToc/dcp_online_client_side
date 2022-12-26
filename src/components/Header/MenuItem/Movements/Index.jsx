@@ -1,13 +1,13 @@
 import React from "react";
 
-const Movements = ({ isActive, handleClick,open }) => {
+const Movements = ({ isActive, handleClick,open, mobile }) => {
   return (
     <a
       href="movements"
       onClick={handleClick("movements")}
       className={`flex  ${!open?'w-100 justify-center':''} items-center p-2 space-x-3 ${
-        isActive ? "border-r-4 border-[#38ae00]" : ""
-      }`}
+        isActive ? "border-r-4 border-[#38ae00]" : "" 
+      } ${mobile?"justify-center":"hidden"}`}
     >
       {isActive ? (
         <svg
