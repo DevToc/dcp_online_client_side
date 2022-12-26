@@ -9,10 +9,9 @@ import Transfer from "./MenuItem/Transfer/Index";
 import Withdraw from "./MenuItem/Withdraw/Index";
 
 const Header = (props) => {
-  const [open, setOpen] = useState(true);
+
   const [menuOpen, setMenuOpen] = useState(false);
   const [mobile, setMobile] = useState(false);
-  const location = useLocation();
   const [activeUrl, setActiveUrl] = useState(location.pathname.slice(1));
   const [screenSize, getDimension] = useState({
     dynamicWidth: window.innerWidth,
@@ -20,22 +19,20 @@ const Header = (props) => {
   });
 
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     setActiveUrl(location.pathname.slice(1));
   }, [location]);
-
   useEffect(() => {
     setActiveUrl(location.pathname.slice(1));
   }, [location.path]);
-
   useEffect(() => {
     window.addEventListener("resize", setDimension);
     return () => {
       window.removeEventListener("resize", setDimension);
     };
   }, [screenSize]);
-
   const handleClick = (url) => (e) => {
     e.preventDefault();
     setActiveUrl(url);
@@ -43,7 +40,6 @@ const Header = (props) => {
     setMobile(false);
     navigate(`/${url}`);
   };
-
   const setDimension = () => {
     getDimension({
       dynamicWidth: window.innerWidth,
@@ -260,8 +256,7 @@ const Header = (props) => {
                   handleClick={handleClick}
                 ></Messages>
               </li>
-
-              <li className="flex justify-center items-center">
+              <li className="flex justify-center items-center ">
                 <Link to="/main" className={` space-x-3 flex items-center`}>
                   <svg
                     width="13"
@@ -280,7 +275,7 @@ const Header = (props) => {
                 </Link>
               </li>
             </ul>
-            <div className="mt-10 flex justify-center text-[#6c6c6c]">
+            <div className="flex justify-center text-[#6c6c6c] mb-[30px] mt-[193px]">
               <Link to="/login" className="flex items-center space-x-2">
                 <svg
                   width="34"
@@ -298,7 +293,7 @@ const Header = (props) => {
                     fill="#6C6C6C"
                   />
                 </svg>{" "}
-                {open && <span>Exit</span>}
+                Exit
               </Link>
             </div>
           </div>

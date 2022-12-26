@@ -25,7 +25,6 @@ const Create = () => {
     <div className="filter absolute top-[-454px] left-[-454px]">
       <BlurCircle />
     </div>
-
     <div className="content flex flex-col ">
       <Banner />
       <div className="">
@@ -66,7 +65,6 @@ const Create = () => {
                   <Select></Select>
                 </div>
               </div>
-
               <div className="items flex flex-col lg:flex-row  justify-between mt-[10px] sm:mt-[32px] lg:items-end  sm:gap-10">
                 <div className="item flex flex-col items-start basis-1/2   ">
                   <Label>Free Value</Label>
@@ -103,7 +101,6 @@ const Create = () => {
         </div>
       </div>
       <Modal title={'New Wallet Created!'} setModalShow={setModalShow} description={'You successfully created new wallet.'} buttonCaption={'Thanks'} status={'success'} show={modalShow} to={'/home'}>
-
       </Modal>
     </div>
   );

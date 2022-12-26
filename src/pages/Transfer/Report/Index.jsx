@@ -9,9 +9,12 @@ import Modal from "../../../components/common/Modal";
 
 import "./index.scss";
 const Report = () => {
-  const navigate = useNavigate();
+
   const [emails, setEmails] = useState([1]);
   const [modalShow, setModalShow] = useState(false);
+
+  const navigate = useNavigate();
+  
   const handlePlus = () => {
     setEmails([...emails, 1]);
   };
@@ -21,6 +24,7 @@ const Report = () => {
   const handleModalShow = () => {
     setModalShow(false);
   };
+  
   return (
     <div className="report sm:pr-[20px] px-[20px] py-[28px] sm:pl-[40px] sm:py-[52px] ">
       <div className="flex  flex-col items-start">

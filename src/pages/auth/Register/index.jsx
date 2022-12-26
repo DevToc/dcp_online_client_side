@@ -15,11 +15,14 @@ import useScreen from "../../../hooks/useScreen";
 import "./index.scss";
 
 const Register = () => {
+
   const [isHide, setHide] = useState(true);
   const [isConfirmHide, setConfirmHide] = useState(true);
   const [modalShow, setModalShow] = useState(false);
   const screen = useScreen();
+
   useEffect(()=>{document.title = "Register"},[]);
+
   return (
     <div className="w-max-screen min-h-screen bg-back text-white pt-[16px] pb-[57px] px-[26px] sm:px-[64px]  items-center relative">
     <LeftTexture />
@@ -64,7 +67,6 @@ const Register = () => {
                 <Input title={"username"}></Input>
               </div>
             </div>
-
             <div className="password mt-[11px] sm:mt-[20px] ">
               <div className="title text-left">
                 <Label>Password</Label>
@@ -87,7 +89,6 @@ const Register = () => {
                 </div>
               </div>
             </div>
-
             <div className="confirm-password mt-[11px] sm:mt-[20px] mb-[5px] sm:mb-[20px]">
               <div className="title text-left">
                 <Label>Confirm Password</Label>

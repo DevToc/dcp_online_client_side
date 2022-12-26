@@ -8,22 +8,14 @@ import Description from "../../components/Description/Index";
 import "./index.scss";
 
 const Home = () => {
+
   const [copied, setCopied] = useState(false);
   const [identity, setIdentity] = useState("82-j4-91-cc-8");
   const [screenSize, getDimension] = useState({
     dynamicWidth: window.innerWidth,
     dynamicHeight: window.innerHeight,
   });
-  useEffect(() => {
-    document.title = "Home";
-  }, []);
 
-  useEffect(() => {
-    window.addEventListener("resize", setDimension);
-    return () => {
-      window.removeEventListener("resize", setDimension);
-    };
-  }, [screenSize]);
   const handleCopy = () => {
     navigator.clipboard.writeText(identity);
     setCopied(true);
@@ -37,6 +29,16 @@ const Home = () => {
       dynamicHeight: window.innerHeight,
     });
   };
+  useEffect(() => {
+    document.title = "Home";
+  }, []);
+  useEffect(() => {
+    window.addEventListener("resize", setDimension);
+    return () => {
+      window.removeEventListener("resize", setDimension);
+    };
+  }, [screenSize]);
+  
 
   return (
     <div className="home sm:pl-[40px] sm:pr-[20px] sm:py-[54px] py-[28px] px-[20px]">
@@ -146,7 +148,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-
       <div className="last-movements mt-[32px] sm:mt-[50px]">
         <div className="title sm:text-[37px] sm:leading-[56px] text-[32px] leading-[48px] font-bold text-white text-left">
           Last Movements
@@ -214,7 +215,6 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-
               <div className="flex mt-[10px]">
                 <div className="flex flex-col basis-1/2">
                   <Label>Amount</Label>

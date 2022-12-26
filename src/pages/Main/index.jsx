@@ -19,7 +19,6 @@ const Main = () => {
       <div className="filter absolute top-[-454px] left-[-454px]">
         <BlurCircle />
       </div>
-
       <div className="content flex flex-col ">
         <Banner />
         <div className="">

@@ -7,6 +7,7 @@ import useScreen from "../../hooks/useScreen";
 const categories = ["All", "Today", "Week", "Month", "Year"];
 
 const Movements = () => {
+
   const [category, setCategory] = useState("All");
   const screenSize = useScreen();
 
@@ -119,7 +120,6 @@ const Movements = () => {
                 </div>
               </div>
             </div>
-
             <div className="flex mt-[10px]">
               <div className="flex flex-col basis-1/2">
                 <Label>Amount</Label>

@@ -8,14 +8,17 @@ import Description from "../../components/Description/Index";
 import Benefit from "../../components/Benefit/Index";
 
 const Transfer = () => {
+  
   const [beneficiaries, setBeneficiaries] = useState([1]);
+
   const navigate = useNavigate();
-  const handlePlus = () => {
-    setBeneficiaries([...beneficiaries, 1]);
-  };
+
   useEffect(() => {
     document.title = "Transfer";
   }, []);
+  const handlePlus = () => {
+    setBeneficiaries([...beneficiaries, 1]);
+  };
   const handleMake = () => {
     navigate("/report");
   };
@@ -55,7 +58,6 @@ const Transfer = () => {
           <Plus handleClick={handlePlus} />
         </div>
       </div>
-
       <div className="encrypted mt-[16px] sm:mt-[40px] flex flex-col w-2/2 xl:w-2/5 items-start">
         <Label>Encrypted Password:</Label>
         <Input title={"wallet name"}></Input>

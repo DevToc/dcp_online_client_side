@@ -13,16 +13,19 @@ import useScreen from '../../../hooks/useScreen';
 import "./index.scss";
 
 const Login = () => {
+
   const [isHide, setHide] = useState(true);
+  
   const navigate = useNavigate();
-  const handleLogin = () => {
-    navigate("/main");
-  };
   const screen = useScreen();
+
   useEffect(() => {
     document.title = "Login";
   }, []);
-
+  const handleLogin = () => {
+    navigate("/main");
+  };
+  
   return (
     <div className="w-max-screen min-h-screen bg-back text-white pt-[16px] pb-[124px] px-[26px] sm:px-[64px]  items-center relative">
       <LeftTexture />
@@ -67,7 +70,6 @@ const Login = () => {
                 <Input title={"usernname"}></Input>
               </div>
             </div>
-
             <div className="password mt-[10px] sm:mt-[20px] ">
               <div className="title text-[23px] leading-[34px] text-whiteWithOpacity text-left">
                 <Label>Password</Label>

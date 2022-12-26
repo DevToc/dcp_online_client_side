@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Label from "../../components/common/Label";
 import Input from "../../components/common/Input";
@@ -7,11 +7,17 @@ import useScreen from "../../hooks/useScreen";
 import Description from "../../components/Description/Index";
 
 const Withdraw = () => {
+
   const [modalShow, setModalShow] = useState(false);
   const screenSize = useScreen();
+  
   const handleClick = () => {
     setModalShow(true);
   };
+  useEffect(()=>{
+    document.title = "Withdrawal"
+  },[])
+  
   return (
     <div className="withdrawal sm:pl-[40px] sm:pr-[20px] sm:py-[54px] px-[20px] py-[28px]">
       <div className="flex  flex-col items-start">
