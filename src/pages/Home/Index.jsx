@@ -98,12 +98,12 @@ const Home = () => {
         <div className="identify-content flex flex-col mt-[10px] items-start space-y-10">
           <div className="content flex flex-col text-left">
             <Label size={"small"}>Identity</Label>
-            <div className="info relative w-[360px] mb-[7px]">
+            <div className="info relative w-100 sm:w-[360px] mb-[7px]">
               <input
                 type="text"
                 value={identity}
                 onChange={(e) => setIdentity(e.target.value)}
-                className="bg-[#474747] text-white w-[360px] border-2 border-[#009600] rounded-[33px] text-base font-semibold px-[15px] py-[13px] outline-none"
+                className="bg-[#474747] text-white w-100 sm:w-[360px] border-2 border-[#009600] rounded-[33px] text-base font-semibold px-[15px] py-[13px] outline-none"
               />
               {!copied ? (
                 <div className="absolute right-4 top-4" onClick={handleCopy}>

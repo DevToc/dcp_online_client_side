@@ -12,7 +12,7 @@ const Select = ({options}) => {
       
       ):(
           options.map((option, index)=>{
-            return <option>{option}</option>
+            return <option key={index}>{option}</option>
           })
       ) 
 }
