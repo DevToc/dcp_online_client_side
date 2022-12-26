@@ -17,7 +17,7 @@ const Movements = ({ isActive, handleClick,open, mobile }) => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g clip-path="url(#clip0_53_135)">
+          <g clipPath="url(#clip0_53_135)">
             <path
               d="M6.5 10C6.22402 10 6 10.224 6 10.5C6 10.776 6.22402 11 6.5 11C6.77598 11 7 10.776 7 10.5C7 10.224 6.77598 10 6.5 10Z"
               fill="#38AE00"
@@ -57,7 +57,7 @@ const Movements = ({ isActive, handleClick,open, mobile }) => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g clip-path="url(#clip0_249_37)">
+          <g clipPath="url(#clip0_249_37)">
             <path
               d="M6.5 10C6.22402 10 6 10.224 6 10.5C6 10.776 6.22402 11 6.5 11C6.77598 11 7 10.776 7 10.5C7 10.224 6.77598 10 6.5 10Z"
               fill="#6C6C6C"

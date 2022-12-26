@@ -130,7 +130,7 @@ const Header = (props) => {
                       <path
                         d="M0 11.6418H12.6567V9.79599H0V11.6418ZM0 7.02734H12.6567V5.18157H0V7.02734ZM0 0.567139V2.41291H12.6567V0.567139H0Z"
                         fill="white"
-                        fill-opacity="0.2"
+                        fillOpacity="0.2"
                       />
                     </svg>
                     <span className={`text-white `}>Wallets list</span>
@@ -202,20 +202,20 @@ const Header = (props) => {
                 <path
                   d="M13 2L23 2"
                   stroke="white"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
                 />
                 <path
                   d="M2 10H23"
                   stroke="white"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
                 />
                 <path
                   d="M2 18H13"
                   stroke="white"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
                 />
               </svg>
             ) : (
@@ -229,14 +229,14 @@ const Header = (props) => {
                 <path
                   d="M19 1L1 19"
                   stroke="white"
-                  stroke-width="2"
-                  stroke-linecap="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
                 />
                 <path
                   d="M1 1L19 19"
                   stroke="white"
-                  stroke-width="2"
-                  stroke-linecap="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
                 />
               </svg>
             )}
@@ -298,7 +298,7 @@ const Header = (props) => {
                       <path
                         d="M0 11.6418H12.6567V9.79599H0V11.6418ZM0 7.02734H12.6567V5.18157H0V7.02734ZM0 0.567139V2.41291H12.6567V0.567139H0Z"
                         fill="white"
-                        fill-opacity="0.2"
+                        fillOpacity="0.2"
                       />
                     </svg>
                     <span>Wallets list</span>

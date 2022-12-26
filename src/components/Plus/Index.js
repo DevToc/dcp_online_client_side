@@ -14,14 +14,14 @@ const Plus = ({handleClick}) => {
         <path
           d="M16 3L16 29"
           stroke="white"
-          stroke-width="5"
-          stroke-linecap="round"
+          strokeWidth="5"
+          strokeLinecap="round"
         />
         <path
           d="M29 16L3 16"
           stroke="white"
-          stroke-width="5"
-          stroke-linecap="round"
+          strokeWidth="5"
+          strokeLinecap="round"
         />
       </svg>
     </div>
