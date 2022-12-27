@@ -39,7 +39,6 @@ const Home = () => {
     };
   }, [screenSize]);
   
-
   return (
     <div className="home sm:pl-[40px] sm:pr-[20px] sm:py-[54px] py-[28px] px-[20px]">
       <div className="title text-left sm:text-[37px] sm:leading-[56px] text-[32px] leading-[48px]  font-bold text-white">

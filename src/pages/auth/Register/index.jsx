@@ -13,6 +13,8 @@ import BottomTexture from "../../../components/Texture/BottomTexture/Index";
 import useScreen from "../../../hooks/useScreen";
 
 import "./index.scss";
+import ErrorDescription from "../../../components/ErrorDescription/Index";
+import Loading from "../../../components/Spinner/Index";
 
 const Register = () => {
 
@@ -20,7 +22,45 @@ const Register = () => {
   const [isConfirmHide, setConfirmHide] = useState(true);
   const [modalShow, setModalShow] = useState(false);
   const screen = useScreen();
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirm, setConfirm] = useState("");
+  const [error, setError] = useState({});
+  const [loading, setLoading] = useState(false);
 
+  const onNameChange = (e) => {
+    setName(e.target.value);
+    setError({});
+  }
+  const handleRegister = (e) => {
+
+    if(name===""){
+      setError({
+        type:"User",
+        content:"name is empty"
+      })
+      return;
+    }
+    if(password!==confirm){
+      setError({
+        type:"Password",
+        content:"password not match"
+      })
+      return;
+    }
+    if(password==="" && confirm === ""){
+      setError({
+        type:"Password",
+        content:"password is empty"
+      })
+    }
+    setLoading(true);
+    setTimeout(() => {
+        setLoading(false);
+        setModalShow(true);
+    }, 3000);
+
+  }
   useEffect(()=>{document.title = "Register"},[]);
 
   return (
@@ -64,8 +104,9 @@ const Register = () => {
                 <Label>Username</Label>
               </div>
               <div>
-                <Input title={"username"}></Input>
+                <Input value={name} onChange={onNameChange} title={"username"}></Input>
               </div>
+              {error.type === "User" && (<ErrorDescription content = {error.content}></ErrorDescription>) }
             </div>
             <div className="password mt-[11px] sm:mt-[20px] ">
               <div className="title text-left">
@@ -73,6 +114,8 @@ const Register = () => {
               </div>
               <div className="relative">
                 <input
+                value={password}
+                  onChange = {e=>{setPassword(e.target.value); setError({})}}
                   placeholder="Enter password"
                   type={isHide ? "password" : "text"}
                   className="placeholder:font-normal placeholder-[#ffffff43] w-100 bg-[#47474780] text-white border-[3px] border-[#ffffff33] rounded-[45px] py-[8px] sm:py-[17px] px-3 text-[12px] leading-[20px] sm:text-[23px] w-100 sm:leading-[34px] font-normal  focus:border-[#009600]  focus:outline-none"
@@ -88,6 +131,7 @@ const Register = () => {
                   )}{" "}
                 </div>
               </div>
+              {error.type === "Password" && (<ErrorDescription content = {error.content}></ErrorDescription>) }
             </div>
             <div className="confirm-password mt-[11px] sm:mt-[20px] mb-[5px] sm:mb-[20px]">
               <div className="title text-left">
@@ -95,13 +139,15 @@ const Register = () => {
               </div>
               <div className="relative">
                 <input
+                value={confirm}
+                  onChange={e=>{setConfirm(e.target.value); setError({})}}
                   placeholder="Confirm password"
                   type={isConfirmHide ? "password" : "text"}
                   className="placeholder:font-normal placeholder-[#ffffff43] w-100 bg-[#47474780] text-white border-[3px] border-[#ffffff33] rounded-[45px] py-[8px] sm:py-[17px] px-3 text-[12px] leading-[20px] sm:text-[23px] w-100 sm:leading-[34px] font-normal  focus:border-[#009600]  focus:outline-none"
                 />
                 <div
                   className="absolute right-3 top-[6px] sm:right-7 sm:top-[14px]  z-100"
-                  onClick={(e) => setConfirmHide(!isConfirmHide)}
+                  onClick={(e) => {setConfirmHide(!isConfirmHide);}}
                 >
                   {isConfirmHide ? (
                     <BiHide size={screen.dynamicWidth>670? 45:30} color={"#ffffff33"} />
@@ -110,14 +156,15 @@ const Register = () => {
                   )}{" "}
                 </div>
               </div>
+              {error.type === "Password" && (<ErrorDescription content = {error.content}></ErrorDescription>) }
             </div>
            <Description>the password is secret and cannot be recovered, keep it in a secure place!</Description>
             <div className="btn-register mt-[50.3px] sm:mt-[30px]">
               <button
-                className="text-white bg-[#38ae00] px-[47px] py-[6px] sm:px-[95px] sm:py-[11px] text-[17px] leading-[26px] sm:text-[27px] sm:leading-[40px] font-semibold rounded-[20px] sm:rounded-[31.5px]"
-                onClick={(e) => setModalShow(true)}
+                className="text-white bg-[#38ae00] px-[47px] py-[6px] w-[167px] sm:w-[305px] sm:px-[95px] sm:py-[11px] text-[17px] leading-[26px] sm:text-[27px] sm:leading-[40px] font-semibold rounded-[20px] sm:rounded-[31.5px]"
+                onClick={handleRegister}
               >
-                Register
+               {loading? <Loading></Loading> :"Register"}
               </button>
             </div>
             <div className="register-now  flex justify-center xl:flex-row flex-col mt-[43px] xl:mt-[57px]">

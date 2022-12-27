@@ -21,7 +21,6 @@ const Header = (props) => {
 
   const navigate = useNavigate();
    
-
   useEffect(() => {
     setActiveUrl(location.pathname.slice(1));
   }, [location]);

@@ -34,7 +34,7 @@ const Modal = ({
           } sm:w-[172px] sm:h-[172px] w-[77px] h-[77px] rounded-[38px] sm:rounded-[86px]`}
         >
           <div>
-            {status == "success" ? (
+            {status === "success" ? (
               screen.dynamicWidth > 678 ? (
                 <svg
                   width="100"
